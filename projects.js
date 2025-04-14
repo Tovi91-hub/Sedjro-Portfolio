@@ -5,7 +5,7 @@ document.addEventListener("DOMContentLoaded", () => {
         {
             title: "Tovi Life Insurance App",
             description: "A dynamic PHP web app featuring secure login, PDF receipt generation, role-based dashboards, and session-based authentication.",
-            link: "https://github.com/Tovi91-hub/IN453_Unit3_Sedjro",
+            link: "https://b56a-66-223-131-254.ngrok-free.app/ToviLifeInsurrance/login.php",
             image: "assets/tovi-life-preview.jpg"
         },
         {
@@ -27,6 +27,9 @@ document.addEventListener("DOMContentLoaded", () => {
             <h3>${project.title}</h3>
             <p>${project.description}</p>
             <a href="${project.link}" target="_blank" class="btn">View Project</a>
+            <a href="https://b56a-66-223-131-254.ngrok-free.app/ToviLifeInsurrance/login.php" target="_blank">
+            Launch Tovi Life Insurance</a>
+
         `;
 
         gallery.appendChild(card);
