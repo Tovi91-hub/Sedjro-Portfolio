@@ -5,7 +5,7 @@ document.addEventListener("DOMContentLoaded", () => {
         {
             title: "Tovi Life Insurance App",
             description: "A dynamic PHP web app featuring secure login, PDF receipt generation, role-based dashboards, and session-based authentication.",
-            link: href="https://b56a-66-223-131-254.ngrok-free.app/ToviLifeInsurrance/login.php",
+            link: href="https://github.com/Tovi91-hub/Tovi-Insurance-App",
             image: "assets/tovi-life-preview.jpg"
         },
         {
