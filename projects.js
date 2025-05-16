@@ -13,7 +13,7 @@ document.addEventListener("DOMContentLoaded", () => {
             description: "An N-tier application using PHP and MySQL with business/data layers, session handling, and Git version control. Developed for academic submission.",
             link: "https://github.com/Tovi91-hub/IN453_Unit3_Sedjro",
             image: "assets/unit3-app-preview.jpg"
-        }
+        },
     ];
 
     const gallery = document.getElementById("project-gallery");
