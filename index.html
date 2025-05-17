@@ -4,7 +4,7 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Sedjro | Portfolio</title>
-    <link rel="stylesheet" href="/style.css">
+    <link rel="stylesheet" href="style.css">
     <script defer src="/projects.js"></script>
     <!-- Google tag (gtag.js) -->
 <script async src="https://www.googletagmanager.com/gtag/js?id=G-86XHK0W779"></script>
@@ -21,7 +21,7 @@
             <img src="/assets/tovi-uniform.jpg" alt="Sedjro" class="profile-pic">
             <h1>Sedjro Tovihouande</h1>
             <p>Paratrooper | Software Developer | Faith-Driven Leader</p>
-            <a href="/assets/Tovi_2025 Resume.pdf" download class="btn">Download Resume</a>
+            <button onclick="promptForCode()" class="btn">Download Resume</button>
         </div>
     </header>
 
@@ -44,7 +44,7 @@
 
     <section id="army" class="section">
         <h2>Leadership</h2>
-        <img src="/assets/tovi-field.jpg" alt="Sedjro in the field" class="section-image">
+        <img src="assets/tovi-field.jpg" alt="Sedjro in the field" class="section-image">
         <p>Petroleum Supply, Hazmat Certifier, and Paratrooper.</p>
     </section>
 
@@ -58,6 +58,25 @@
         <p>Founder of <a href="https://myvitalharmony.com/" target ="_blank">Vital Harmony </a>, an online store offering household. Active affiliate of Amway & WWG. Currently expanding brand presence.</p>
         <p>and personal products and Creator of <a href="https://connect.myvitalharmony.com" target ="_blank">Vital Connect App</a>. An application where you can help and pray to each other</p>
     </section>
+    <script>
+        function promptForCode() {
+            const correctCode = "STov2025"; // 🔐 Change this to your private code
+            const userInput = prompt("Enter the access code to download the resume:");
+
+            if (userInput === correctCode) {
+            // Create an invisible link and auto-download
+            const link = document.createElement("a");
+            link.href = "assets/Tovi_2025 Resume.pdf";
+            link.download = "Sedjro_Tovihouande_Resume.pdf";
+            document.body.appendChild(link);
+            link.click();
+            document.body.removeChild(link);
+            } else {
+            alert("❌ Incorrect code. Access denied.");
+            }
+        }
+    </script>
+
 
     <footer id="contact">
         <h2>Contact</h2>
