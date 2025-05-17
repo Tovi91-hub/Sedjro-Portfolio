@@ -60,10 +60,10 @@
     </section>
     <script>
         function promptForCode() {
-            const correctCode = "STov2025"; // 🔐 Change this to your private code
+            const correctCode = "STov2025"; // Replace with your actual code
             const userInput = prompt("Enter the access code to download the resume:");
+
             if (userInput === correctCode) {
-            // Create an invisible link and auto-download
             const link = document.createElement("a");
             link.href = "assets/Tovi_2025 Resume.pdf";
             link.download = "Sedjro_Tovihouande_Resume.pdf";
@@ -71,17 +71,26 @@
             link.click();
             document.body.removeChild(link);
             } else {
-            alert("❌ Incorrect code. Access denied, Contact Sedjro Tovihouande.");
-            <a href="#contact">Contact</a>
+            alert("❌ Incorrect code. You can contact me for access.");
+            const contactArea = document.getElementById("contact-response");
+
+            // Only add it once
+            if (!document.getElementById("contact-btn")) {
+                const contactBtn = document.createElement("p");
+                contactBtn.innerHTML = `<a id="contact-btn" href="mailto:sedjro@myvitalharmony.com?subject=Resume Access Request" class="btn">📨 Contact Me</a>`;
+                contactArea.appendChild(contactBtn);
             }
-        }
+          }
+    }
     </script>
+
 
 
     <footer id="contact">
         <h2>Contact</h2>
         <p>Email: sedjro@myvitalharmony.com</p>
         <p>GitHub: <a href="https://github.com/Tovi91-hub" target="_blank">Tovi91-hub</a></p>
+        <div id="contact-response"></div>
     </footer>
 </body>
 </html>
