@@ -62,7 +62,6 @@
         function promptForCode() {
             const correctCode = "STov2025"; // 🔐 Change this to your private code
             const userInput = prompt("Enter the access code to download the resume:");
-
             if (userInput === correctCode) {
             // Create an invisible link and auto-download
             const link = document.createElement("a");
@@ -72,7 +71,7 @@
             link.click();
             document.body.removeChild(link);
             } else {
-            alert("❌ Incorrect code. Access denied.");
+            alert("❌ Incorrect code. Access denied, Contact Sedjro Tovihouande.");
             }
         }
     </script>
