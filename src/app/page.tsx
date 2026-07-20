@@ -1,65 +1,281 @@
-import Image from "next/image";
+import {
+  ArrowRight,
+  Award,
+  Cloud,
+  Code2,
+  FileText,
+  Layers,
+  Rocket,
+  ShieldCheck,
+} from "lucide-react";
+import Link from "next/link";
+import { ButtonLink } from "@/components/Button";
+import { CTASection } from "@/components/CTASection";
+import { PortraitFrame } from "@/components/PortraitFrame";
+import { ProjectCard } from "@/components/ProjectCard";
+import { Reveal } from "@/components/Reveal";
+import { SectionHeading } from "@/components/SectionHeading";
+import { SkillCategoryCard } from "@/components/SkillCategoryCard";
+import { SocialLinks } from "@/components/SocialLinks";
+import { additionalProjects, featuredProjects } from "@/data/projects";
+import { site } from "@/data/site";
+import { skillCategories } from "@/data/skills";
 
-export default function Home() {
+const credibility = [
+  {
+    icon: Rocket,
+    title: "Production software",
+    description:
+      "Multiple live platforms designed, built, and operated end to end.",
+  },
+  {
+    icon: Code2,
+    title: "Full-stack development",
+    description:
+      "From data models and APIs to accessible, responsive interfaces.",
+  },
+  {
+    icon: Cloud,
+    title: "Cloud deployment",
+    description:
+      "Products shipped and operated on modern cloud infrastructure.",
+  },
+  {
+    icon: ShieldCheck,
+    title: "Secure application design",
+    description:
+      "Privacy-first architecture for platforms handling sensitive data.",
+  },
+  {
+    icon: Award,
+    title: "Military leadership",
+    description:
+      "Active-duty U.S. Army NCO — accountability, planning, execution.",
+  },
+  {
+    icon: Layers,
+    title: "Technology entrepreneurship",
+    description:
+      "Founder experience taking products from idea to paying users.",
+  },
+];
+
+export default function HomePage() {
   return (
-    <div className="flex flex-col flex-1 items-center justify-center bg-zinc-50 font-sans dark:bg-black">
-      <main className="flex flex-1 w-full max-w-3xl flex-col items-center justify-between py-32 px-16 bg-white dark:bg-black sm:items-start">
-        <Image
-          className="dark:invert"
-          src="/next.svg"
-          alt="Next.js logo"
-          width={100}
-          height={20}
-          priority
-        />
-        <div className="flex flex-col items-center gap-6 text-center sm:items-start sm:text-left">
-          <h1 className="max-w-xs text-3xl font-semibold leading-10 tracking-tight text-black dark:text-zinc-50">
-            To get started, edit the page.tsx file.
-          </h1>
-          <p className="max-w-md text-lg leading-8 text-zinc-600 dark:text-zinc-400">
-            Looking for a starting point or more instructions? Head over to{" "}
-            <a
-              href="https://vercel.com/templates?framework=next.js&utm_source=create-next-app&utm_medium=appdir-template-tw&utm_campaign=create-next-app"
-              className="font-medium text-zinc-950 dark:text-zinc-50"
-            >
-              Templates
-            </a>{" "}
-            or the{" "}
-            <a
-              href="https://nextjs.org/learn?utm_source=create-next-app&utm_medium=appdir-template-tw&utm_campaign=create-next-app"
-              className="font-medium text-zinc-950 dark:text-zinc-50"
-            >
-              Learning
-            </a>{" "}
-            center.
-          </p>
+    <>
+      {/* Hero */}
+      <section aria-labelledby="hero-heading" className="hero-glow">
+        <div className="container-site grid items-center gap-12 py-16 sm:py-20 lg:grid-cols-[1.2fr_0.8fr] lg:py-28">
+          <Reveal>
+            <div>
+              <p className="text-sm font-semibold tracking-wide text-accent uppercase">
+                {site.supportingIdentity}
+              </p>
+              <h1
+                id="hero-heading"
+                className="mt-4 font-display text-4xl font-semibold tracking-tight text-balance sm:text-5xl lg:text-6xl"
+              >
+                {site.name}
+              </h1>
+              <p className="mt-3 font-display text-xl font-medium text-muted sm:text-2xl">
+                {site.title}
+              </p>
+              <p className="mt-5 max-w-xl text-lg leading-relaxed text-balance">
+                {site.heroStatement}
+              </p>
+              <p className="mt-4 max-w-xl text-base leading-relaxed text-muted">
+                {site.heroSupport}
+              </p>
+              <div className="mt-8 flex flex-wrap items-center gap-3">
+                <ButtonLink href="/projects" size="lg">
+                  View my work
+                  <ArrowRight className="size-4" aria-hidden="true" />
+                </ButtonLink>
+                <ButtonLink href="/resume" variant="secondary" size="lg">
+                  <FileText className="size-4" aria-hidden="true" />
+                  Résumé
+                </ButtonLink>
+              </div>
+              <div className="mt-6">
+                <SocialLinks />
+              </div>
+            </div>
+          </Reveal>
+          <Reveal delay={0.1} className="mx-auto w-full max-w-xs sm:max-w-sm">
+            <PortraitFrame />
+          </Reveal>
         </div>
-        <div className="flex flex-col gap-4 text-base font-medium sm:flex-row">
-          <a
-            className="flex h-12 w-full items-center justify-center gap-2 rounded-full bg-foreground px-5 text-background transition-colors hover:bg-[#383838] dark:hover:bg-[#ccc] md:w-[158px]"
-            href="https://vercel.com/new?utm_source=create-next-app&utm_medium=appdir-template-tw&utm_campaign=create-next-app"
-            target="_blank"
-            rel="noopener noreferrer"
-          >
-            <Image
-              className="dark:invert"
-              src="/vercel.svg"
-              alt="Vercel logomark"
-              width={16}
-              height={16}
+      </section>
+
+      {/* Credibility */}
+      <section
+        aria-labelledby="credibility-heading"
+        className="border-t border-border bg-surface"
+      >
+        <div className="container-site py-16 sm:py-20">
+          <SectionHeading
+            eyebrow="What I bring"
+            title="Practical engineering, disciplined delivery"
+            description="I translate real operational problems into software people actually use — and I ship it."
+          />
+          <h2 id="credibility-heading" className="sr-only">
+            Professional credibility
+          </h2>
+          <div className="mt-10 grid gap-4 sm:grid-cols-2 lg:grid-cols-3">
+            {credibility.map((item, i) => (
+              <Reveal key={item.title} delay={Math.min(i * 0.05, 0.25)}>
+                <div className="flex h-full gap-4 rounded-2xl border border-border bg-bg p-5">
+                  <span className="flex size-10 shrink-0 items-center justify-center rounded-lg bg-accent-soft text-accent">
+                    <item.icon className="size-5" aria-hidden="true" />
+                  </span>
+                  <div>
+                    <h3 className="font-display text-base font-semibold">
+                      {item.title}
+                    </h3>
+                    <p className="mt-1 text-sm leading-relaxed text-muted">
+                      {item.description}
+                    </p>
+                  </div>
+                </div>
+              </Reveal>
+            ))}
+          </div>
+        </div>
+      </section>
+
+      {/* Featured projects */}
+      <section aria-labelledby="featured-heading">
+        <div className="container-site py-16 sm:py-20">
+          <div className="flex flex-wrap items-end justify-between gap-4">
+            <SectionHeading
+              eyebrow="Featured work"
+              title="Platforms built for real operations"
+              description="Each project started with a real problem — a business, a team, or a market that needed working software."
             />
-            Deploy Now
-          </a>
-          <a
-            className="flex h-12 w-full items-center justify-center rounded-full border border-solid border-black/[.08] px-5 transition-colors hover:border-transparent hover:bg-black/[.04] dark:border-white/[.145] dark:hover:bg-[#1a1a1a] md:w-[158px]"
-            href="https://nextjs.org/docs?utm_source=create-next-app&utm_medium=appdir-template-tw&utm_campaign=create-next-app"
-            target="_blank"
-            rel="noopener noreferrer"
-          >
-            Documentation
-          </a>
+            <Link
+              href="/projects"
+              className="inline-flex items-center gap-1.5 text-sm font-medium text-accent transition-colors hover:text-accent-strong"
+            >
+              All projects
+              <ArrowRight className="size-4" aria-hidden="true" />
+            </Link>
+          </div>
+          <h2 id="featured-heading" className="sr-only">
+            Featured projects
+          </h2>
+          <div className="mt-10 grid gap-6 lg:grid-cols-3">
+            {featuredProjects.map((project, i) => (
+              <Reveal key={project.slug} delay={Math.min(i * 0.06, 0.2)}>
+                <ProjectCard project={project} />
+              </Reveal>
+            ))}
+          </div>
+
+          {/* Additional projects */}
+          <div className="mt-14">
+            <SectionHeading eyebrow="Also built" title="More projects" />
+            <div className="mt-8 grid gap-6 md:grid-cols-2 lg:grid-cols-3">
+              {additionalProjects.map((project) => (
+                <Reveal key={project.slug}>
+                  <ProjectCard project={project} />
+                </Reveal>
+              ))}
+            </div>
+          </div>
         </div>
-      </main>
-    </div>
+      </section>
+
+      {/* Skills overview */}
+      <section
+        aria-labelledby="skills-heading"
+        className="border-t border-border bg-surface"
+      >
+        <div className="container-site py-16 sm:py-20">
+          <SectionHeading
+            eyebrow="Capabilities"
+            title="Skills, organized the way I work"
+            description="Not a logo wall — the actual categories of work involved in taking a platform from idea to production."
+          />
+          <h2 id="skills-heading" className="sr-only">
+            Skills overview
+          </h2>
+          <div className="mt-10 grid gap-4 sm:grid-cols-2 lg:grid-cols-4">
+            {skillCategories.map((category) => (
+              <Reveal key={category.title}>
+                <SkillCategoryCard category={category} />
+              </Reveal>
+            ))}
+          </div>
+        </div>
+      </section>
+
+      {/* About preview */}
+      <section aria-labelledby="about-heading">
+        <div className="container-site grid items-center gap-10 py-16 sm:py-20 lg:grid-cols-2">
+          <Reveal>
+            <div>
+              <SectionHeading
+                eyebrow="About"
+                title="Discipline from the Army. Craft from shipping."
+              />
+              <h2 id="about-heading" className="sr-only">
+                About preview
+              </h2>
+              <div className="mt-4 space-y-4 text-base leading-relaxed text-muted">
+                <p>
+                  I&apos;m an active-duty U.S. Army Noncommissioned Officer and
+                  a software developer. The Army taught me accountability,
+                  planning, and how to lead people through hard problems;
+                  building software taught me to turn those same operational
+                  instincts into products.
+                </p>
+                <p>
+                  I&apos;ve founded and built platforms in healthcare, military
+                  personnel accountability, small-business operations, and
+                  insurance — while continuing formal education in software
+                  development and graduate-level AWS cloud computing.
+                </p>
+              </div>
+              <div className="mt-6">
+                <ButtonLink href="/about" variant="secondary">
+                  More about me
+                  <ArrowRight className="size-4" aria-hidden="true" />
+                </ButtonLink>
+              </div>
+            </div>
+          </Reveal>
+          <Reveal delay={0.08}>
+            <dl className="grid grid-cols-2 gap-4">
+              {[
+                {
+                  term: "Focus",
+                  detail: "Healthcare, operations & cloud platforms",
+                },
+                {
+                  term: "Approach",
+                  detail: "Security-conscious, user-centered",
+                },
+                { term: "Role", detail: "Founder, developer & NCO" },
+                { term: "Learning", detail: "Graduate AWS cloud computing" },
+              ].map((item) => (
+                <div
+                  key={item.term}
+                  className="rounded-2xl border border-border bg-surface p-5"
+                >
+                  <dt className="text-xs font-semibold tracking-wide text-faint uppercase">
+                    {item.term}
+                  </dt>
+                  <dd className="mt-2 text-sm leading-relaxed font-medium">
+                    {item.detail}
+                  </dd>
+                </div>
+              ))}
+            </dl>
+          </Reveal>
+        </div>
+      </section>
+
+      <CTASection />
+    </>
   );
 }

@@ -1,26 +1,145 @@
 @import "tailwindcss";
 
+@custom-variant dark (&:where(.dark, .dark *));
+
+/* ------------------------------------------------------------------ */
+/* Design tokens — light theme                                         */
+/* ------------------------------------------------------------------ */
 :root {
-  --background: #ffffff;
-  --foreground: #171717;
+  --bg: #f5f7fb;
+  --surface: #ffffff;
+  --surface-2: #edf1f7;
+  --border: #d9e0ea;
+  --border-strong: #c3ccda;
+  --ink: #0e1726;
+  --muted: #46536a;
+  --faint: #5d6a82;
+  --accent: #1d5fdb;
+  --accent-strong: #174fba;
+  --accent-soft: #e5edfb;
+  --gold: #8f6a1e;
+  --ring: #1d5fdb;
+  --header: rgba(245, 247, 251, 0.85);
 }
 
+/* Design tokens — dark theme (primary theme) */
+.dark {
+  --bg: #0a1120;
+  --surface: #101a2e;
+  --surface-2: #16223a;
+  --border: #223050;
+  --border-strong: #31436b;
+  --ink: #e9eef7;
+  --muted: #a6b2c8;
+  --faint: #8794ac;
+  --accent: #6a9bf4;
+  --accent-strong: #8db1f7;
+  --accent-soft: #14243f;
+  --gold: #d9b163;
+  --ring: #6a9bf4;
+  --header: rgba(10, 17, 32, 0.82);
+}
+
+/* ------------------------------------------------------------------ */
+/* Tailwind theme mapping                                              */
+/* ------------------------------------------------------------------ */
 @theme inline {
-  --color-background: var(--background);
-  --color-foreground: var(--foreground);
-  --font-sans: var(--font-geist-sans);
-  --font-mono: var(--font-geist-mono);
+  --color-bg: var(--bg);
+  --color-surface: var(--surface);
+  --color-surface-2: var(--surface-2);
+  --color-border: var(--border);
+  --color-border-strong: var(--border-strong);
+  --color-ink: var(--ink);
+  --color-muted: var(--muted);
+  --color-faint: var(--faint);
+  --color-accent: var(--accent);
+  --color-accent-strong: var(--accent-strong);
+  --color-accent-soft: var(--accent-soft);
+  --color-gold: var(--gold);
+
+  --font-sans:
+    "Inter Variable", ui-sans-serif, system-ui, -apple-system, "Segoe UI",
+    Roboto, "Helvetica Neue", Arial, sans-serif;
+  --font-display:
+    "Space Grotesk Variable", "Inter Variable", ui-sans-serif, system-ui,
+    sans-serif;
 }
 
-@media (prefers-color-scheme: dark) {
-  :root {
-    --background: #0a0a0a;
-    --foreground: #ededed;
-  }
+/* ------------------------------------------------------------------ */
+/* Base                                                                */
+/* ------------------------------------------------------------------ */
+html {
+  color-scheme: light;
+  scroll-behavior: smooth;
+}
+
+html.dark {
+  color-scheme: dark;
 }
 
 body {
-  background: var(--background);
-  color: var(--foreground);
-  font-family: Arial, Helvetica, sans-serif;
+  background-color: var(--bg);
+  color: var(--ink);
+  font-family: var(--font-sans);
+  text-rendering: optimizeLegibility;
+  -webkit-font-smoothing: antialiased;
+}
+
+::selection {
+  background-color: var(--accent);
+  color: #ffffff;
+}
+
+/* Visible, consistent focus for keyboard users */
+:focus-visible {
+  outline: 2px solid var(--ring);
+  outline-offset: 3px;
+  border-radius: 4px;
+}
+
+/* Respect reduced-motion preferences globally */
+@media (prefers-reduced-motion: reduce) {
+  html {
+    scroll-behavior: auto;
+  }
+  *,
+  *::before,
+  *::after {
+    animation-duration: 0.01ms !important;
+    animation-iteration-count: 1 !important;
+    transition-duration: 0.01ms !important;
+  }
+}
+
+/* ------------------------------------------------------------------ */
+/* Small utilities used across the site                                */
+/* ------------------------------------------------------------------ */
+@utility container-site {
+  margin-inline: auto;
+  width: 100%;
+  max-width: 72rem;
+  padding-inline: 1.25rem;
+
+  @media (width >= 40rem) {
+    padding-inline: 2rem;
+  }
+
+  @media (width >= 64rem) {
+    padding-inline: 2.5rem;
+  }
+}
+
+/* Subtle top glow used on hero surfaces — restrained by design */
+@utility hero-glow {
+  background:
+    radial-gradient(
+      52rem 26rem at 18% -10%,
+      color-mix(in oklab, var(--accent) 14%, transparent),
+      transparent 68%
+    ),
+    radial-gradient(
+      40rem 22rem at 95% 0%,
+      color-mix(in oklab, var(--gold) 7%, transparent),
+      transparent 70%
+    );
 }
