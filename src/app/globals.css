@@ -134,12 +134,85 @@ body {
   background:
     radial-gradient(
       52rem 26rem at 18% -10%,
-      color-mix(in oklab, var(--accent) 14%, transparent),
+      color-mix(in oklab, var(--accent) 16%, transparent),
       transparent 68%
     ),
     radial-gradient(
       40rem 22rem at 95% 0%,
-      color-mix(in oklab, var(--gold) 7%, transparent),
+      color-mix(in oklab, var(--gold) 8%, transparent),
       transparent 70%
     );
+}
+
+/* Faint dot grid — adds technical texture without noise */
+@utility dot-grid {
+  background-image: radial-gradient(
+    color-mix(in oklab, var(--ink) 10%, transparent) 1px,
+    transparent 1px
+  );
+  background-size: 24px 24px;
+  mask-image: radial-gradient(60rem 32rem at 30% 0%, black, transparent 75%);
+}
+
+/* Gradient text for a single emphasized phrase */
+@utility text-gradient {
+  background: linear-gradient(
+    92deg,
+    var(--accent) 10%,
+    color-mix(in oklab, var(--accent) 45%, var(--gold)) 90%
+  );
+  -webkit-background-clip: text;
+  background-clip: text;
+  color: transparent;
+}
+
+/* Card hover craft: lift, accent border, soft tinted shadow */
+@utility card-lift {
+  transition:
+    transform 0.25s cubic-bezier(0.21, 0.65, 0.35, 1),
+    border-color 0.25s ease,
+    box-shadow 0.25s ease;
+
+  &:hover {
+    transform: translateY(-4px);
+    border-color: color-mix(in oklab, var(--accent) 45%, var(--border));
+    box-shadow:
+      0 12px 32px -12px color-mix(in oklab, var(--accent) 25%, transparent),
+      0 2px 8px -2px rgb(0 0 0 / 0.12);
+  }
+
+  @media (prefers-reduced-motion: reduce) {
+    &:hover {
+      transform: none;
+    }
+  }
+}
+
+/* Hairline gradient divider (use on a 1px-tall element) */
+@utility hairline {
+  background: linear-gradient(
+    90deg,
+    transparent,
+    color-mix(in oklab, var(--accent) 40%, var(--border)),
+    transparent
+  );
+}
+
+/* Availability badge pulse */
+@keyframes pulse-dot {
+  0%,
+  100% {
+    box-shadow: 0 0 0 0 color-mix(in oklab, var(--accent) 45%, transparent);
+  }
+  70% {
+    box-shadow: 0 0 0 6px transparent;
+  }
+}
+
+@utility pulse-dot {
+  animation: pulse-dot 2.4s ease-out infinite;
+
+  @media (prefers-reduced-motion: reduce) {
+    animation: none;
+  }
 }

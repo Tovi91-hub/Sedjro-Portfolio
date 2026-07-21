@@ -61,13 +61,26 @@ export function ProjectFrame({
             aria-label={`${project.name} — preview image coming soon`}
             className="absolute inset-0 flex flex-col items-center justify-center gap-3 p-6"
             style={{
-              background: `radial-gradient(28rem 16rem at 30% 0%, ${project.accent}1f, transparent 70%)`,
+              background: `radial-gradient(28rem 16rem at 30% 0%, ${project.accent}29, transparent 70%), radial-gradient(20rem 14rem at 90% 110%, ${project.accent}14, transparent 70%)`,
             }}
           >
             <span
               aria-hidden="true"
-              className="flex size-14 items-center justify-center rounded-2xl font-display text-lg font-bold text-white shadow-sm"
-              style={{ backgroundColor: project.accent }}
+              className="absolute top-1/2 left-1/2 size-44 -translate-x-1/2 -translate-y-1/2 rounded-full border"
+              style={{ borderColor: `${project.accent}2e` }}
+            />
+            <span
+              aria-hidden="true"
+              className="absolute top-1/2 left-1/2 size-64 -translate-x-1/2 -translate-y-1/2 rounded-full border"
+              style={{ borderColor: `${project.accent}1a` }}
+            />
+            <span
+              aria-hidden="true"
+              className="relative flex size-14 items-center justify-center rounded-2xl font-display text-lg font-bold text-white shadow-lg"
+              style={{
+                backgroundColor: project.accent,
+                boxShadow: `0 8px 24px -8px ${project.accent}80`,
+              }}
             >
               {project.monogram}
             </span>

@@ -11,7 +11,7 @@ import { TechBadge } from "@/components/TechBadge";
  */
 export function ProjectCard({ project }: { project: Project }) {
   return (
-    <article className="flex h-full flex-col overflow-hidden rounded-2xl border border-border bg-surface transition-colors hover:border-border-strong">
+    <article className="flex h-full card-lift flex-col overflow-hidden rounded-2xl border border-border bg-surface">
       <ProjectFrame
         project={project}
         className="rounded-none border-0 border-b"

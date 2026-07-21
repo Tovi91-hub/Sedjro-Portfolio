@@ -6,7 +6,11 @@ export function Footer() {
   const year = new Date().getFullYear();
 
   return (
-    <footer className="border-t border-border bg-surface">
+    <footer className="relative border-t border-border bg-surface">
+      <div
+        aria-hidden="true"
+        className="absolute inset-x-0 -top-px h-px hairline"
+      />
       <div className="container-site flex flex-col gap-8 py-12 sm:flex-row sm:items-start sm:justify-between">
         <div className="max-w-sm">
           <p className="font-display text-base font-semibold">{site.name}</p>

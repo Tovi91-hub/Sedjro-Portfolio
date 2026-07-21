@@ -6,13 +6,13 @@ type Variant = "primary" | "secondary" | "ghost";
 type Size = "md" | "lg";
 
 const base =
-  "inline-flex items-center justify-center gap-2 rounded-lg font-medium transition-colors disabled:cursor-not-allowed disabled:opacity-60";
+  "inline-flex items-center justify-center gap-2 rounded-lg font-medium transition-all duration-200 disabled:cursor-not-allowed disabled:opacity-60";
 
 const variants: Record<Variant, string> = {
   primary:
-    "bg-accent text-white hover:bg-accent-strong dark:text-[#0a1120] dark:font-semibold",
+    "bg-accent text-white shadow-md shadow-accent/25 hover:bg-accent-strong hover:shadow-lg hover:shadow-accent/30 dark:text-[#0a1120] dark:font-semibold",
   secondary:
-    "border border-border-strong text-ink hover:border-accent hover:text-accent",
+    "border border-border-strong bg-surface/50 text-ink hover:border-accent hover:text-accent",
   ghost: "text-muted hover:text-ink",
 };
 

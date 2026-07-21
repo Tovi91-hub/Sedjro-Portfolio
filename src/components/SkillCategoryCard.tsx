@@ -27,7 +27,7 @@ export function SkillCategoryCard({ category }: { category: SkillCategory }) {
   const Icon = iconMap[category.icon] ?? LayoutDashboard;
 
   return (
-    <div className="flex h-full flex-col gap-3 rounded-2xl border border-border bg-surface p-5 sm:p-6">
+    <div className="flex h-full card-lift flex-col gap-3 rounded-2xl border border-border bg-surface p-5 sm:p-6">
       <div className="flex items-center gap-3">
         <span className="flex size-9 items-center justify-center rounded-lg bg-accent-soft text-accent">
           <Icon className="size-4.5" aria-hidden="true" />

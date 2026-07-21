@@ -64,29 +64,40 @@ export default function HomePage() {
   return (
     <>
       {/* Hero */}
-      <section aria-labelledby="hero-heading" className="hero-glow">
-        <div className="container-site grid items-center gap-12 py-16 sm:py-20 lg:grid-cols-[1.2fr_0.8fr] lg:py-28">
+      <section
+        aria-labelledby="hero-heading"
+        className="relative overflow-hidden hero-glow"
+      >
+        <div aria-hidden="true" className="absolute inset-0 dot-grid" />
+        <div className="relative container-site grid items-center gap-12 py-16 sm:py-20 lg:grid-cols-[1.15fr_0.85fr] lg:py-28">
           <Reveal>
             <div>
-              <p className="text-sm font-semibold tracking-wide text-accent uppercase">
+              <p className="inline-flex items-center gap-2 rounded-full border border-border bg-surface/70 px-3.5 py-1.5 text-xs font-semibold tracking-wide backdrop-blur">
+                <span
+                  aria-hidden="true"
+                  className="size-2 pulse-dot rounded-full bg-accent"
+                />
+                Open to software &amp; cloud opportunities
+              </p>
+              <p className="mt-5 text-sm font-semibold tracking-[0.14em] text-accent uppercase">
                 {site.supportingIdentity}
               </p>
               <h1
                 id="hero-heading"
-                className="mt-4 font-display text-4xl font-semibold tracking-tight text-balance sm:text-5xl lg:text-6xl"
+                className="mt-4 font-display text-4xl leading-[1.05] font-bold tracking-tight text-balance sm:text-6xl lg:text-7xl"
               >
                 {site.name}
               </h1>
-              <p className="mt-3 font-display text-xl font-medium text-muted sm:text-2xl">
-                {site.title}
+              <p className="mt-4 font-display text-xl font-medium sm:text-2xl">
+                <span className="text-gradient">{site.title}</span>
               </p>
-              <p className="mt-5 max-w-xl text-lg leading-relaxed text-balance">
+              <p className="mt-6 max-w-xl text-lg leading-relaxed text-balance">
                 {site.heroStatement}
               </p>
               <p className="mt-4 max-w-xl text-base leading-relaxed text-muted">
                 {site.heroSupport}
               </p>
-              <div className="mt-8 flex flex-wrap items-center gap-3">
+              <div className="mt-9 flex flex-wrap items-center gap-3">
                 <ButtonLink href="/projects" size="lg">
                   View my work
                   <ArrowRight className="size-4" aria-hidden="true" />
@@ -95,14 +106,22 @@ export default function HomePage() {
                   <FileText className="size-4" aria-hidden="true" />
                   Résumé
                 </ButtonLink>
-              </div>
-              <div className="mt-6">
-                <SocialLinks />
+                <SocialLinks className="sm:ml-2" />
               </div>
             </div>
           </Reveal>
           <Reveal delay={0.1} className="mx-auto w-full max-w-xs sm:max-w-sm">
-            <PortraitFrame />
+            <div className="relative">
+              <div
+                aria-hidden="true"
+                className="absolute -inset-3 -z-10 rotate-2 rounded-3xl border border-border bg-surface-2/60"
+              />
+              <div
+                aria-hidden="true"
+                className="absolute -inset-px -z-10 rounded-2xl bg-[radial-gradient(24rem_18rem_at_70%_-10%,color-mix(in_oklab,var(--accent)_28%,transparent),transparent_70%)] blur-xl"
+              />
+              <PortraitFrame />
+            </div>
           </Reveal>
         </div>
       </section>
@@ -124,7 +143,7 @@ export default function HomePage() {
           <div className="mt-10 grid gap-4 sm:grid-cols-2 lg:grid-cols-3">
             {credibility.map((item, i) => (
               <Reveal key={item.title} delay={Math.min(i * 0.05, 0.25)}>
-                <div className="flex h-full gap-4 rounded-2xl border border-border bg-bg p-5">
+                <div className="flex h-full card-lift gap-4 rounded-2xl border border-border bg-bg p-5">
                   <span className="flex size-10 shrink-0 items-center justify-center rounded-lg bg-accent-soft text-accent">
                     <item.icon className="size-5" aria-hidden="true" />
                   </span>
@@ -260,7 +279,7 @@ export default function HomePage() {
               ].map((item) => (
                 <div
                   key={item.term}
-                  className="rounded-2xl border border-border bg-surface p-5"
+                  className="card-lift rounded-2xl border border-border bg-surface p-5"
                 >
                   <dt className="text-xs font-semibold tracking-wide text-faint uppercase">
                     {item.term}
