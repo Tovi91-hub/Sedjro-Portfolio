@@ -49,13 +49,11 @@ export const projects: Project[] = [
     monogram: "VH",
     accent: "#2f9e8f",
     domainLabel: "myvitalharmony.com",
-    screenshot: null,
+    screenshot: "/images/projects/myvital-harmony.jpg",
     screenshotAlt:
-      "MyVital Harmony provider dashboard showing scheduling and client management",
+      "MyVital Harmony landing page — the operating system for independent healthcare and wellness businesses",
     screenshotsNeeded: [
-      "Public landing page (desktop, 16:10)",
-      "Provider dashboard with demo data only (desktop, 16:10)",
-      "Client booking flow on mobile (9:19.5)",
+      "Optional: provider dashboard with demo data only (desktop, 16:10)",
     ],
     caseStudy: {
       overview:
@@ -212,13 +210,11 @@ export const projects: Project[] = [
     monogram: "FO",
     accent: "#5b8def",
     domainLabel: "myfreedomops.com",
-    screenshot: null,
+    screenshot: "/images/projects/myfreedomops.jpg",
     screenshotAlt:
-      "MyFreedomOps dashboard showing financial goals and the accountability roll-up with demo data",
+      "MyFreedomOps landing page — command your financial future, built for military, government, and families",
     screenshotsNeeded: [
-      "Financial dashboard with demo data only (desktop, 16:10)",
-      "Accountability status submission with demo data only (mobile, 9:19.5)",
-      "PSG first-formation roll-up with demo data only (desktop, 16:10)",
+      "Optional: accountability roll-up with fictional demo data only (desktop, 16:10)",
     ],
     caseStudy: {
       overview:
@@ -373,14 +369,10 @@ export const projects: Project[] = [
     monogram: "MH",
     accent: "#c98a2f",
     domainLabel: "muriellehairbraids.com",
-    screenshot: null,
+    screenshot: "/images/projects/murielle-hair-braids.jpg",
     screenshotAlt:
-      "Murielle Hair Braids homepage showing services and online booking",
-    screenshotsNeeded: [
-      "Homepage hero with services (desktop, 16:10)",
-      "Booking flow on mobile (9:19.5)",
-      "Gallery/portfolio section (desktop, 16:10)",
-    ],
+      "Murielle Hair Braids homepage with braid photography, services, and booking call to action",
+    screenshotsNeeded: [],
     caseStudy: {
       overview:
         "Murielle Hair Braids is a live production website and digital operations platform for a professional braiding business in Colorado. It presents the full service catalog — knotless braids, box braids, cornrows, twists, and kids' styles — supports online appointment booking, and runs a small product shop for braiding hair and accessories.",
@@ -519,12 +511,10 @@ export const projects: Project[] = [
     monogram: "SI",
     accent: "#7c6ff0",
     domainLabel: "sedoinsurance.com",
-    screenshot: null,
-    screenshotAlt: "Sedoinsurance quote flow on a mobile device",
-    screenshotsNeeded: [
-      "Landing page (desktop, 16:10)",
-      "Quote flow on mobile (9:19.5)",
-    ],
+    screenshot: "/images/projects/sedoinsurance.jpg",
+    screenshotAlt:
+      "Sedoinsurance homepage — quote online, pay by mobile money, file claims from your phone",
+    screenshotsNeeded: [],
     caseStudy: {
       overview:
         "Sedoinsurance is an insurance-focused web platform built for the realities of an emerging market: mobile-native, mobile-money-friendly, and designed to compress the distance between wanting coverage and having it. It presents vehicle, health, life, and property products, with contracts issued through licensed partner insurers.",
