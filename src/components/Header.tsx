@@ -1,7 +1,7 @@
 "use client";
 
 import { AnimatePresence, motion, useReducedMotion } from "framer-motion";
-import { ChevronRight, FileText, Menu, X } from "lucide-react";
+import { FileText, Menu, X } from "lucide-react";
 import Link from "next/link";
 import { usePathname } from "next/navigation";
 import { useEffect, useRef, useState, useSyncExternalStore } from "react";
@@ -28,6 +28,7 @@ export function Header() {
   const [open, setOpen] = useState(false);
   const [lastPath, setLastPath] = useState(pathname);
   const toggleRef = useRef<HTMLButtonElement>(null);
+  const panelRef = useRef<HTMLDivElement>(null);
 
   // Close the mobile menu on navigation (derived-state-on-change pattern).
   if (lastPath !== pathname) {
@@ -48,14 +49,18 @@ export function Header() {
     return () => document.removeEventListener("keydown", onKey);
   }, [open]);
 
-  // Lock page scroll while the drawer is open.
+  // Close when tapping/clicking outside the menu card (the page itself stays
+  // scrollable and interactive — no blocking backdrop).
   useEffect(() => {
     if (!open) return;
-    const previous = document.body.style.overflow;
-    document.body.style.overflow = "hidden";
-    return () => {
-      document.body.style.overflow = previous;
+    const onPointerDown = (e: PointerEvent) => {
+      const target = e.target as Node;
+      if (panelRef.current?.contains(target)) return;
+      if (toggleRef.current?.contains(target)) return;
+      setOpen(false);
     };
+    document.addEventListener("pointerdown", onPointerDown);
+    return () => document.removeEventListener("pointerdown", onPointerDown);
   }, [open]);
 
   const isActive = (href: string) =>
@@ -131,34 +136,27 @@ export function Header() {
           <AnimatePresence>
             {open && (
               <>
-                <motion.button
-                  key="backdrop"
-                  type="button"
-                  aria-label="Close menu"
-                  tabIndex={-1}
-                  onClick={() => setOpen(false)}
-                  className="fixed inset-x-0 top-16 bottom-0 z-40 cursor-default bg-black/45 backdrop-blur-[2px] md:hidden"
-                  initial={{ opacity: 0 }}
-                  animate={{ opacity: 1 }}
-                  exit={{ opacity: 0 }}
-                  transition={{ duration: 0.18 }}
-                />
                 <motion.div
                   key="panel"
                   id="mobile-menu"
-                  className="fixed inset-x-0 top-16 z-50 overflow-hidden rounded-b-2xl border-b border-border bg-bg shadow-2xl md:hidden"
+                  ref={panelRef}
+                  style={{ transformOrigin: "top right" }}
+                  className="fixed top-[4.25rem] right-3 z-50 max-h-[calc(100dvh-5.5rem)] w-[82%] max-w-xs overflow-y-auto rounded-2xl border border-border bg-bg shadow-2xl md:hidden"
                   initial={
-                    reduceMotion ? { opacity: 0 } : { opacity: 0, y: -16 }
+                    reduceMotion
+                      ? { opacity: 0 }
+                      : { opacity: 0, scale: 0.94, y: -8 }
                   }
-                  animate={{ opacity: 1, y: 0 }}
-                  exit={reduceMotion ? { opacity: 0 } : { opacity: 0, y: -16 }}
-                  transition={{ duration: 0.22, ease: [0.21, 0.65, 0.35, 1] }}
+                  animate={{ opacity: 1, scale: 1, y: 0 }}
+                  exit={
+                    reduceMotion
+                      ? { opacity: 0 }
+                      : { opacity: 0, scale: 0.94, y: -8 }
+                  }
+                  transition={{ duration: 0.2, ease: [0.21, 0.65, 0.35, 1] }}
                 >
-                  <nav
-                    aria-label="Primary mobile"
-                    className="container-site py-4"
-                  >
-                    <ul className="divide-y divide-border">
+                  <nav aria-label="Primary mobile" className="px-4 py-4">
+                    <ul className="space-y-1">
                       {site.nav.map((item) => (
                         <li key={item.href}>
                           <Link
@@ -167,22 +165,13 @@ export function Header() {
                               isActive(item.href) ? "page" : undefined
                             }
                             className={cn(
-                              "flex items-center justify-between gap-3 rounded-lg px-2 py-4 text-base font-medium transition-colors",
+                              "block rounded-lg px-3 py-3 text-base font-medium transition-colors",
                               isActive(item.href)
-                                ? "text-accent"
+                                ? "bg-accent-soft text-accent"
                                 : "text-ink active:bg-surface-2",
                             )}
                           >
                             {item.label}
-                            <ChevronRight
-                              className={cn(
-                                "size-4",
-                                isActive(item.href)
-                                  ? "text-accent"
-                                  : "text-faint",
-                              )}
-                              aria-hidden="true"
-                            />
                           </Link>
                         </li>
                       ))}
