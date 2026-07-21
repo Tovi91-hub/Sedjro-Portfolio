@@ -7,10 +7,10 @@ import type { Project } from "@/types/portfolio";
  * Verification notes (July 2026):
  * - myvitalharmony.com, muriellehairbraids.com, and sedoinsurance.com were
  *   confirmed live and their public marketing claims informed the copy below.
- * - myfreedomops.com is live, but the public page currently presents a
- *   financial platform ("FreedomOps") rather than the personnel-accountability
- *   product described here. See CONTENT-CHECKLIST.md — Sedjro must confirm
- *   which product story the case study should tell.
+ * - myfreedomops.com is live as an AI financial platform for the military
+ *   community; Sedjro confirmed (July 2026) that the accountability module
+ *   was added to it, and the case study covers both.
+ * - Sedjro confirmed sedoinsurance.com is his product (July 2026).
  * - tovihouandegenealogy.com currently shows a "Launching Soon" page, so it is
  *   presented as in development and intentionally not linked.
  * - Stack lists marked `isVerified: false` are representative of each
@@ -188,21 +188,22 @@ export const projects: Project[] = [
   {
     slug: "myfreedomops",
     name: "MyFreedomOps",
-    portfolioRole: "Military personnel accountability & workflow platform",
+    portfolioRole:
+      "Financial readiness & personnel accountability platform for the military community",
     tagline:
-      "Daily personnel accountability designed around how teams actually report.",
+      "Command your financial future — with first-formation accountability built in.",
     problem:
-      "Daily personnel status in most units still runs on group texts, spreadsheets, and manual roll-ups — slow, error-prone, and painful for the leaders who have to compile them.",
+      "Military members and families fight debt, thin savings, and credit issues with generic tools — while their leaders burn every morning chasing first-formation statuses through group texts and spreadsheets.",
     solution:
-      "An independently built accountability application where Soldiers submit their own daily status and Team Leaders, Squad Leaders, and Platoon Sergeants see live, role-scoped roll-ups that compile into a clean PERSTAT.",
+      "An AI-powered financial platform built for military, government, and families — debt elimination, emergency savings, credit — plus an accountability module where Soldiers submit their own status and Platoon Sergeants get first-formation accountability in one view.",
     stackSummary: [
+      "AI financial guidance",
+      "Accountability module",
       "Role-based workflows",
-      "PERSTAT generation",
-      "Roster management",
       "Cloud deployment",
     ],
     status: "live",
-    statusLabel: "Live domain · product evolving",
+    statusLabel: "Live · in active development",
     featured: true,
     order: 2,
     liveUrl: "https://myfreedomops.com",
@@ -213,37 +214,53 @@ export const projects: Project[] = [
     domainLabel: "myfreedomops.com",
     screenshot: null,
     screenshotAlt:
-      "MyFreedomOps accountability dashboard showing team status roll-up with demo data",
+      "MyFreedomOps dashboard showing financial goals and the accountability roll-up with demo data",
     screenshotsNeeded: [
-      "Status submission screen with demo data only (mobile, 9:19.5)",
-      "Leader roll-up / PERSTAT view with demo data only (desktop, 16:10)",
+      "Financial dashboard with demo data only (desktop, 16:10)",
+      "Accountability status submission with demo data only (mobile, 9:19.5)",
+      "PSG first-formation roll-up with demo data only (desktop, 16:10)",
     ],
     caseStudy: {
       overview:
-        "MyFreedomOps is an independently developed personnel accountability application built around the daily rhythm of small-unit leadership: Soldiers report their own status, and leaders at each echelon get exactly the visibility their role requires. It is a personal product built from first-hand experience of the problem — it is not endorsed by, affiliated with, or officially deployed by the U.S. Army or the Department of Defense.",
+        "MyFreedomOps is an independently developed platform serving the military community on two fronts that usually never share a product: financial readiness and personnel accountability. An AI-driven advisor helps military members, government employees, and families eliminate debt, build emergency savings, and improve credit — while the accountability module lets Soldiers submit their own status so Platoon Sergeants get first-formation accountability without the morning scramble. It is a personal product built from first-hand experience — it is not endorsed by, affiliated with, or officially deployed by the U.S. Army or the Department of Defense.",
       problem:
-        "Every morning, leaders across the force burn time chasing statuses through texts and calls, then re-typing them into spreadsheets and slide decks. The information is stale by the time it reaches the top, and the process punishes exactly the people responsible for the most Soldiers.",
+        "Financial stress is one of the most persistent readiness problems in the force, and generic budgeting apps don't understand military pay, benefits, or life rhythms. Meanwhile, the daily accountability that consumes every leader's morning still runs on group texts, calls, and re-typed spreadsheets. Both problems drain the same population — so the platform addresses both.",
       users: [
+        "Military members and families working toward financial freedom",
+        "Government employees managing debt, savings, and credit",
         "Soldiers submitting their own daily status",
-        "Team Leaders confirming their teams",
-        "Squad Leaders rolling up squads",
-        "Platoon Sergeants compiling and reporting the platoon",
+        "Team Leaders, Squad Leaders, and Platoon Sergeants running first-formation accountability",
       ],
       goals: [
-        "Let individuals report status in seconds from a phone",
-        "Scope visibility by role so each leader sees their own element",
-        "Generate a clean, date-based PERSTAT without manual re-typing",
-        "Stay simple enough for completely nontechnical users",
+        "Give the military community an AI advisor that says exactly what to do next financially",
+        "Make debt elimination, emergency savings, and credit improvement trackable goals",
+        "Let Soldiers report status in seconds from a phone",
+        "Hand PSGs a complete first-formation picture without chasing anyone",
       ],
       myRole:
-        "Founder and sole developer — problem definition from lived experience as an NCO, product design, full-stack development, and cloud deployment.",
+        "Founder and sole developer — problem definition from lived experience as an NCO, product design, AI-assisted guidance flows, full-stack development, and cloud deployment.",
       productStrategy:
-        "The product is deliberately narrow: daily accountability done extremely well, rather than a sprawling unit-management suite. Adoption depends on the individual Soldier's submission taking less time than answering a group text, so the entire design starts from that single interaction.",
+        "Both halves of the platform serve the same person at different hours of the day: the Soldier stressed about money at night is the same Soldier texting a status at 0600. Financial readiness is the commercial core — subscriptions with a free trial — and the accountability module deepens daily engagement while solving a problem every NCO recognizes instantly.",
       keyFeatures: [
+        {
+          title: "AI financial advisor",
+          description:
+            "Personalized, step-by-step guidance that tells users exactly what to do next to eliminate debt, build savings, and raise their credit score.",
+        },
+        {
+          title: "Debt, savings & credit goals",
+          description:
+            "The three core financial-readiness goals tracked as concrete, measurable plans rather than generic budgets.",
+        },
         {
           title: "Self-service status submission",
           description:
             "Soldiers submit their own daily status from any device using clear, predefined status categories.",
+        },
+        {
+          title: "First-formation accountability for PSGs",
+          description:
+            "Statuses roll up by team and squad into one live view, so Platoon Sergeants have first-formation accountability before formation starts.",
         },
         {
           title: "Role-based visibility",
@@ -251,22 +268,13 @@ export const projects: Project[] = [
             "Team, squad, and platoon views mirror the real chain of responsibility — each leader sees their element and nothing else.",
         },
         {
-          title: "PERSTAT generation",
-          description:
-            "Daily statuses compile automatically into a date-based personnel status report, replacing manual roll-ups.",
-        },
-        {
           title: "Roster management",
           description:
-            "Leaders manage team and squad rosters directly, keeping the reporting structure current as personnel change.",
-        },
-        {
-          title: "Built for nontechnical users",
-          description:
-            "Every workflow is designed to be understood in one glance, with no training required.",
+            "Leaders manage rosters directly, keeping the reporting structure current as personnel change.",
         },
       ],
       architecture: [
+        "AI-assisted guidance flows over user financial goals and progress",
         "Role-based access model mapped to team, squad, and platoon echelons",
         "Date-based reporting engine compiling individual submissions into roll-ups",
         "Secure account and access controls",
@@ -275,11 +283,17 @@ export const projects: Project[] = [
       ],
       security: [
         "Independently developed product — deliberately holds no official unit rosters, operational data, or unit-sensitive information",
-        "Demo and portfolio materials use fictional personnel data only",
+        "Demo and portfolio materials use fictional personnel and financial data only",
         "Secure authentication and role-scoped authorization on every view",
-        "Designed so a compromised individual account exposes the minimum possible scope",
+        "Financial information treated as sensitive data with access limited to the account owner",
       ],
       challenges: [
+        {
+          challenge:
+            "Serving two very different jobs — personal finance and unit accountability — without building two confusing products.",
+          approach:
+            "The platform is organized around the person, not the feature: one account, one clear home for each job, and shared design language so switching contexts feels natural.",
+        },
         {
           challenge:
             "Modeling military reporting hierarchies without hard-coding one unit's structure.",
@@ -287,18 +301,20 @@ export const projects: Project[] = [
             "The roster model treats echelons as composable relationships, so teams, squads, and platoons are configuration rather than code.",
         },
         {
-          challenge: "Winning adoption from users who default to group texts.",
+          challenge:
+            "Making AI guidance trustworthy enough for high-stakes money decisions.",
           approach:
-            "The submission flow was cut to the absolute minimum number of taps, and the leader views were designed to give back more time than the tool asks for.",
+            "Guidance is framed as concrete next steps grounded in the user's own numbers and goals, not open-ended chat — specific, checkable, and reversible.",
         },
       ],
       stack: [
-        // TODO(Sedjro): replace with the exact stack (framework, database, hosting).
+        // TODO(Sedjro): replace with the exact stack (framework, database, AI provider, hosting).
         {
           category: "Platform",
           items: [
             "Modern web application stack",
-            "Relational data model for rosters and statuses",
+            "AI-assisted guidance",
+            "Relational data model for goals, rosters, and statuses",
             "Email integration",
             "Cloud hosting with HTTPS",
           ],
@@ -306,24 +322,24 @@ export const projects: Project[] = [
         },
       ],
       deployment:
-        "Deployed to cloud infrastructure at myfreedomops.com with HTTPS and environment-based configuration.",
+        "Live at myfreedomops.com on cloud infrastructure with HTTPS, subscriptions, and a free trial.",
       currentStatus:
-        "Independently developed commercial product; the platform and its public positioning are actively evolving.",
+        "Live and in active development — the financial platform is public with a free trial, and the accountability module is a recent addition to the product.",
       lessonsLearned: [
         "Products for nontechnical users are won or lost in the first thirty seconds of use.",
-        "Modeling an organization's real reporting structure is the hard part — the UI follows from getting the data model right.",
-        "Building for a domain you know personally collapses the distance between developer and user.",
+        "Building for a community you belong to collapses the distance between developer and user — the accountability module exists because I lived the problem.",
+        "AI features earn trust by being specific and actionable, not conversational.",
       ],
       futureImprovements: [
-        "Additional report formats and export options",
+        "Deeper accountability reporting and export formats",
         "Configurable status categories per organization",
-        "Offline-tolerant submission for low-connectivity environments",
+        "Expanded financial-readiness tooling for military life events",
       ],
     },
     seo: {
       title: "MyFreedomOps — Case Study",
       description:
-        "How Sedjro Tovihouande built MyFreedomOps, an independently developed personnel accountability platform with role-based workflows and automated PERSTAT generation.",
+        "How Sedjro Tovihouande built MyFreedomOps, an AI-powered financial readiness platform for the military community with a built-in first-formation accountability module for unit leaders.",
     },
     isVerified: false,
   },

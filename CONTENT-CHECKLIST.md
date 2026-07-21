@@ -34,28 +34,20 @@ with confirmed facts. Items map to `isVerified: false` flags and
 - [ ] **Certifications actually earned** → `src/data/experience.ts` (list is empty by design — never list planned certs as earned)
 - [ ] **Approve the biography/about copy** → `src/app/about/page.tsx` and `src/data/site.ts` hero text
 
-## 4. ⚠️ Decision needed: MyFreedomOps positioning
+## 4. ~~Decision needed: MyFreedomOps positioning~~ — RESOLVED (July 2026)
 
-The case study describes the **personnel accountability / PERSTAT product**
-per your brief. However, **myfreedomops.com currently presents "FreedomOps —
-Command Your Financial Future," an AI financial platform for military
-members, government employees, and families** (checked July 2026).
-
-Decide one of:
-
-1. The accountability app is the story → consider whether the live-site
-   button should link there while the domain shows a different product
-   (`liveUrl` / `liveUrlVerified` in `src/data/projects.ts`), or
-2. The product pivoted to financial management → the case study needs a
-   rewrite to match (happy to do this — just say the word), or
-3. Both products exist → the portfolio could present them separately.
+Sedjro confirmed the accountability module was **added to** the live
+FreedomOps financial platform. The case study now covers both: AI financial
+readiness (debt, savings, credit) for the military community, plus the
+first-formation accountability module for PSGs. Remaining: verify the exact
+stack and provide screenshots (demo data only).
 
 ## 5. Live-site verification notes (checked July 2026)
 
 - ✅ `myvitalharmony.com` — live; case-study capabilities align with the public site
 - ✅ `muriellehairbraids.com` — live; booking, shop, gallery, testimonials confirmed
-- ✅ `sedoinsurance.com` — live ("Insurance, rethought for Benin") — **confirm this is your product**
-- ⚠️ `myfreedomops.com` — live but shows a different product (see §4)
+- ✅ `sedoinsurance.com` — live; ownership confirmed by Sedjro
+- ✅ `myfreedomops.com` — live; financial platform + accountability module confirmed by Sedjro
 - ⏳ `tovihouandegenealogy.com` — "Launching Soon" page; presented as in development, not linked
 
 ## 6. Before launch
