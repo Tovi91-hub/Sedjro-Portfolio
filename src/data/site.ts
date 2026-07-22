@@ -32,8 +32,12 @@ export const site: SiteConfig = {
   },
 
   social: [
-    // TODO(Sedjro): add the real GitHub profile URL. Set href and isVerified: true.
-    { platform: "github", label: "GitHub", href: null, isVerified: false },
+    {
+      platform: "github",
+      label: "GitHub",
+      href: "https://github.com/Tovi91-hub",
+      isVerified: true,
+    },
     // TODO(Sedjro): add the real LinkedIn profile URL. Set href and isVerified: true.
     { platform: "linkedin", label: "LinkedIn", href: null, isVerified: false },
     {
@@ -53,11 +57,9 @@ export const site: SiteConfig = {
   ],
 
   resume: {
-    // TODO(Sedjro): drop the final PDF at public/resume/sedjro-tovihouande-resume.pdf
-    // then set pdfPath to "/resume/sedjro-tovihouande-resume.pdf" and isVerified: true.
-    pdfPath: null,
-    isVerified: false,
-    updatedLabel: null,
+    pdfPath: "/resume/sedjro-tovihouande-resume.pdf",
+    isVerified: true,
+    updatedLabel: "July 2026",
   },
 
   seo: {

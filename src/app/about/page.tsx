@@ -67,11 +67,13 @@ export default function AboutPage() {
               <p>
                 On the technical side, I work across the full stack — from data
                 modeling and role-based access control to accessible, responsive
-                interfaces — with formal education in software and web
-                development and graduate-level study focused on AWS cloud
-                computing. As a founder, I&apos;ve carried products through the
-                whole unglamorous middle: payments, onboarding, deployments, and
-                the iteration that follows real users.
+                interfaces — holding a B.S. in Information Technology (Software
+                Development) earned magna cum laude, built on an earlier
+                engineering degree in electrical engineering and industrial data
+                processing, with graduate study in AWS cloud computing ahead. As
+                a founder, I&apos;ve carried products through the whole
+                unglamorous middle: payments, onboarding, deployments, and the
+                iteration that follows real users.
               </p>
               <p>
                 What pulls it all together is a simple conviction: the best

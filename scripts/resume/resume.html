@@ -1,0 +1,197 @@
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="utf-8" />
+<title>Sedjro M. Tovihouande — Résumé</title>
+<style>
+  @font-face {
+    font-family: "Inter";
+    src: url("../../node_modules/@fontsource-variable/inter/files/inter-latin-wght-normal.woff2") format("woff2-variations");
+    font-weight: 100 900;
+  }
+  @font-face {
+    font-family: "Space Grotesk";
+    src: url("../../node_modules/@fontsource-variable/space-grotesk/files/space-grotesk-latin-wght-normal.woff2") format("woff2-variations");
+    font-weight: 300 700;
+  }
+  :root {
+    --ink: #0e1726;
+    --muted: #46536a;
+    --accent: #1d5fdb;
+    --navy: #0a1120;
+    --line: #d9e0ea;
+  }
+  * { margin: 0; padding: 0; box-sizing: border-box; }
+  @page { size: letter; margin: 0; }
+  html, body { width: 8.5in; }
+  body {
+    font-family: "Inter", Arial, sans-serif;
+    color: var(--ink);
+    font-size: 10.6px;
+    line-height: 1.48;
+    padding: 0.5in 0.6in 0.45in;
+  }
+
+  /* Header */
+  .head { display: flex; justify-content: space-between; align-items: flex-start; }
+  h1 {
+    font-family: "Space Grotesk", "Inter", Arial, sans-serif;
+    font-size: 29px; font-weight: 700; letter-spacing: -0.02em; color: var(--navy);
+  }
+  .role { font-size: 12.5px; font-weight: 600; color: var(--accent); margin-top: 2px; letter-spacing: 0.01em; }
+  .contact { text-align: right; font-size: 10px; color: var(--muted); line-height: 1.55; }
+  .contact strong { color: var(--ink); font-weight: 600; }
+
+  .rule { height: 2px; background: linear-gradient(90deg, var(--accent), rgba(29,95,219,0.15)); border-radius: 2px; margin: 10px 0 11px; }
+
+  /* Sections */
+  h2 {
+    font-family: "Space Grotesk", "Inter", Arial, sans-serif;
+    font-size: 11.5px; font-weight: 700; text-transform: uppercase; letter-spacing: 0.09em;
+    color: var(--navy); margin: 12px 0 6px;
+    display: flex; align-items: center; gap: 6px;
+  }
+  h2::after { content: ""; flex: 1; height: 1px; background: var(--line); }
+
+  p.summary { color: var(--ink); }
+
+  /* Skills grid */
+  .skills { display: grid; grid-template-columns: 104px 1fr; row-gap: 3px; column-gap: 10px; }
+  .skills dt { font-weight: 600; color: var(--navy); }
+  .skills dd { color: var(--muted); }
+
+  /* Projects & experience */
+  .item { margin-bottom: 8px; }
+  .item-head { display: flex; justify-content: space-between; align-items: baseline; }
+  .item-title { font-weight: 700; font-size: 11.2px; color: var(--navy); }
+  .item-title .sep { color: var(--accent); font-weight: 600; }
+  .item-meta { font-size: 9.8px; color: var(--muted); white-space: nowrap; }
+  ul { list-style: none; margin-top: 2.5px; }
+  li { padding-left: 10px; position: relative; color: var(--ink); }
+  li::before { content: ""; position: absolute; left: 0; top: 7px; width: 4px; height: 4px; border-radius: 50%; background: var(--accent); }
+
+  /* Education */
+  .edu .item { margin-bottom: 5px; }
+  .edu .item-title { font-size: 10.8px; }
+  .honors { color: var(--accent); font-weight: 600; }
+
+  .certline { color: var(--muted); }
+  .certline strong { color: var(--ink); font-weight: 600; }
+</style>
+</head>
+<body>
+
+  <div class="head">
+    <div>
+      <h1>Sedjro M. Tovihouande</h1>
+      <div class="role">Software Developer · Cloud Computing Professional · U.S. Army NCO</div>
+    </div>
+    <div class="contact">
+      Anchorage, Alaska &nbsp;·&nbsp; (970) 702-5982<br />
+      <strong>contact@sedjrotovihouande.com</strong><br />
+      sedjrotovihouande.com &nbsp;·&nbsp; github.com/Tovi91-hub
+    </div>
+  </div>
+  <div class="rule"></div>
+
+  <p class="summary">
+    Full-stack software developer and active-duty U.S. Army Sergeant with a B.S. in Information Technology
+    (Software Development, <b>magna cum laude</b>) and four production web platforms designed, built, and operated
+    end to end — a multi-tenant healthcare SaaS, an AI-powered financial-readiness platform for the military
+    community, a small-business commerce platform, and a mobile-first insurance product. Security-first engineer:
+    multi-tenant data isolation, role-based access control, audit trails. NCO leadership with accountability for
+    people, $3M in equipment, and mission outcomes.
+  </p>
+
+  <h2>Technical Skills</h2>
+  <dl class="skills">
+    <dt>Languages</dt><dd>TypeScript, JavaScript, PHP, SQL, HTML5, CSS3</dd>
+    <dt>Frontend</dt><dd>React, Next.js (App Router), Tailwind CSS, responsive &amp; accessible UI (WCAG)</dd>
+    <dt>Backend &amp; Data</dt><dd>Node.js, REST APIs, MySQL, SQL Server, relational modeling, multi-tenant schemas</dd>
+    <dt>Cloud &amp; Tools</dt><dd>Vercel, Git/GitHub, DNS &amp; custom domains, automated testing (Vitest, PHPUnit), VS Code</dd>
+    <dt>Integrations</dt><dd>Stripe &amp; Stripe Connect, transactional email (Resend, PHPMailer), mobile-money payment flows</dd>
+    <dt>Security</dt><dd>RBAC, tenant isolation, audit logging, secure auth &amp; sessions, input validation, security headers/CSP</dd>
+  </dl>
+
+  <h2>Production Software — Founder &amp; Sole Developer</h2>
+
+  <div class="item">
+    <div class="item-head">
+      <span class="item-title">MyVital Harmony <span class="sep">·</span> Multi-tenant healthcare &amp; wellness SaaS</span>
+      <span class="item-meta">myvitalharmony.com · Live</span>
+    </div>
+    <ul>
+      <li>Built a multi-tenant platform where each business runs under its own brand with database-level tenant isolation, role-based access (owners, providers, staff, clients), and append-only audit trails.</li>
+      <li>Integrated Stripe subscriptions for platform billing and Stripe Connect for per-business payouts; shipped scheduling, secure client messaging, and digital programs on tiered plans ($19–$129/mo).</li>
+      <li>Engineered for regulated work: encrypted health-data vault separated from operational data.</li>
+    </ul>
+  </div>
+
+  <div class="item">
+    <div class="item-head">
+      <span class="item-title">MyFreedomOps <span class="sep">·</span> AI financial readiness + personnel accountability</span>
+      <span class="item-meta">myfreedomops.com · Live</span>
+    </div>
+    <ul>
+      <li>Built an AI-guided platform for the military community covering debt elimination, emergency savings, and credit — plus an accountability module giving unit leaders first-formation status roll-ups from Soldiers' self-reports. Independently developed; not affiliated with the U.S. Army or DoD.</li>
+    </ul>
+  </div>
+
+  <div class="item">
+    <div class="item-head">
+      <span class="item-title">Murielle Hair Braids <span class="sep">·</span> Small-business booking &amp; e-commerce</span>
+      <span class="item-meta">muriellehairbraids.com · Live client production</span>
+    </div>
+    <ul>
+      <li>Delivered a client's full digital storefront — service catalog with transparent pricing, online booking with deposits, product shop, admin dashboard, and local SEO — processing real bookings and payments.</li>
+    </ul>
+  </div>
+
+  <div class="item">
+    <div class="item-head">
+      <span class="item-title">Sedoinsurance <span class="sep">·</span> Mobile-first insurance platform (Benin)</span>
+      <span class="item-meta">sedoinsurance.com · Live</span>
+    </div>
+    <ul>
+      <li>Built a bilingual (FR/EN) insurance platform — online quoting across four product lines, mobile-money payments, and phone-first claims — with policies issued through licensed partner insurers.</li>
+    </ul>
+  </div>
+
+  <h2>Military Experience</h2>
+  <div class="item">
+    <div class="item-head">
+      <span class="item-title">Sergeant (92F) — United States Army, Active Duty</span>
+      <span class="item-meta">JBER, Alaska · 2020 – Present</span>
+    </div>
+    <ul>
+      <li>Lead, train, and develop Soldiers; accountable for personnel readiness and $3M in petroleum assets with zero-loss accountability.</li>
+      <li>Unit Prevention Leader and Hazmat certifier — own compliance-grade documentation for hazardous-materials logistics and ammunition transport.</li>
+      <li>Supported S2 (security) office IT operations: access control, SAAR processing, and secure documentation workflows.</li>
+    </ul>
+  </div>
+
+  <h2>Education</h2>
+  <div class="edu">
+    <div class="item">
+      <div class="item-head">
+        <span class="item-title">B.S. in Information Technology — Software Development Using Web Languages <span class="honors">· Magna Cum Laude</span></span>
+        <span class="item-meta">Purdue University Global · April 2026</span>
+      </div>
+    </div>
+    <div class="item">
+      <div class="item-head">
+        <span class="item-title">Vocational Bachelor's — Electrical Engineering &amp; Industrial Data Processing <span class="honors">· Upper Second-Class Honours</span></span>
+        <span class="item-meta">IUT Lokossa, Univ. of Abomey-Calavi (Benin) · 2013</span>
+      </div>
+      <ul><li>NACES-evaluated U.S. equivalency (SpanTran): 91.5 semester credits, 3.73/4.00 GPA — coursework incl. OOP, databases, computer architecture, Linux/Windows network administration.</li></ul>
+    </div>
+  </div>
+
+  <h2>Certifications &amp; Military Schools</h2>
+  <p class="certline">
+    <strong>U.S. Army Airborne School</strong> · <strong>Hazmat Certifier</strong> · <strong>Unit Prevention Leader</strong> ·
+    <strong>Security Management (S2)</strong> · CompTIA Security+ (in progress) · Languages: English &amp; French (professional)
+  </p>
+
+</body>
+</html>

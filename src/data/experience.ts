@@ -49,10 +49,10 @@ export const experience: ExperienceItem[] = [
   {
     id: "army-nco",
     category: "military",
-    role: "Noncommissioned Officer (Active Duty)",
+    role: "Sergeant — Noncommissioned Officer (Active Duty)",
     organization: "United States Army",
-    // TODO(Sedjro): confirm service period. No unit, MOS, or location published by design.
-    period: "Present",
+    // Unit details intentionally not published on the website.
+    period: "2020 – Present",
     summary:
       "Serving as an active-duty NCO, responsible for leading, training, and developing Soldiers. This leadership experience directly shapes how I plan, communicate, and deliver software.",
     highlights: [
@@ -61,21 +61,32 @@ export const experience: ExperienceItem[] = [
       "Clear communication across ranks and with nontechnical audiences",
       "Calm, structured decision-making when conditions change",
     ],
-    isVerified: false,
+    isVerified: true,
   },
 ];
 
 export const education: EducationItem[] = [
   {
     id: "purdue-global",
-    institution: "Purdue Global",
-    // TODO(Sedjro): confirm exact program name and dates.
-    program: "Software & Web Development studies",
-    period: "Dates on résumé",
-    status: "In progress / completed — confirm",
+    institution: "Purdue University Global",
+    program:
+      "B.S. in Information Technology — Software Development Using Web Languages",
+    period: "Completed April 2026",
+    status: "Magna Cum Laude",
     summary:
-      "Formal education in software development and web technologies, applied directly to shipping production platforms.",
-    isVerified: false,
+      "Bachelor of Science earned magna cum laude with a concentration in software development using web languages — applied directly to shipping production platforms.",
+    isVerified: true,
+  },
+  {
+    id: "iut-lokossa",
+    institution: "IUT Lokossa — University of Abomey-Calavi (Benin)",
+    program:
+      "Vocational Bachelor's — Electrical Engineering & Industrial Data Processing",
+    period: "2010 – 2013",
+    status: "Upper Second-Class Honours",
+    summary:
+      "Engineering foundation spanning computer architecture, object-oriented programming, databases, and Linux/Windows network administration. NACES-evaluated U.S. equivalency with a 3.73/4.00 GPA.",
+    isVerified: true,
   },
   {
     id: "aws-graduate",
@@ -91,7 +102,44 @@ export const education: EducationItem[] = [
 ];
 
 export const certifications: Certification[] = [
-  // TODO(Sedjro): add earned certifications only. Do not list planned certs as earned.
-  // Example shape:
-  // { id: "aws-ccp", name: "AWS Certified Cloud Practitioner", issuer: "Amazon Web Services", status: "earned", year: "2025", isVerified: true },
+  {
+    id: "airborne",
+    name: "Airborne School",
+    issuer: "United States Army",
+    status: "earned",
+    year: null,
+    isVerified: true,
+  },
+  {
+    id: "hazmat",
+    name: "Hazmat Certifier",
+    issuer: "United States Army",
+    status: "earned",
+    year: null,
+    isVerified: true,
+  },
+  {
+    id: "upl",
+    name: "Unit Prevention Leader",
+    issuer: "United States Army",
+    status: "earned",
+    year: null,
+    isVerified: true,
+  },
+  {
+    id: "security-mgmt",
+    name: "Security Management (S2)",
+    issuer: "United States Army",
+    status: "earned",
+    year: null,
+    isVerified: true,
+  },
+  {
+    id: "security-plus",
+    name: "CompTIA Security+",
+    issuer: "CompTIA · in progress",
+    status: "in-progress",
+    year: null,
+    isVerified: true,
+  },
 ];

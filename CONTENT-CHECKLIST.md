@@ -7,15 +7,15 @@ with confirmed facts. Items map to `isVerified: false` flags and
 
 ## 1. Links & identity
 
-- [ ] **GitHub profile URL** → `src/data/site.ts` (`social`, platform `github`) — currently hidden because no URL exists
-- [ ] **LinkedIn profile URL** → `src/data/site.ts` (`social`, platform `linkedin`) — currently hidden
+- [x] **GitHub profile URL** — wired: https://github.com/Tovi91-hub
+- [ ] **LinkedIn profile URL** → `src/data/site.ts` (`social`, platform `linkedin`) — currently hidden; paste the URL in chat
 - [ ] **Confirm `contact@sedjrotovihouande.com` mailbox exists** (create it via your email provider / Google Workspace / Cloudflare Email Routing) → `src/data/site.ts` (`email`)
 - [ ] **Public repository links** for any projects you want linked → `repoUrl` per project in `src/data/projects.ts` (only for repos that are public and safe to share)
 
 ## 2. Files & media
 
 - [ ] **Professional portrait** → `public/images/portrait.jpg`, then set `portraitSrc` in `src/components/PortraitFrame.tsx`
-- [ ] **Final résumé PDF** → `public/resume/sedjro-tovihouande-resume.pdf`, then set `resume.pdfPath` in `src/data/site.ts`
+- [x] **Final résumé PDF** — generated from `scripts/resume/resume.html` (edit HTML → run `node scripts/generate-resume.mjs`); wired at /resume
 - [ ] **Project screenshots** (demo data only; 16:10) → `public/images/projects/`, then set `screenshot` per project. Shots needed:
   - MyVital Harmony: landing page; provider dashboard (demo data); mobile booking flow
   - MyFreedomOps: status submission (demo data); leader roll-up / PERSTAT view (demo data)
@@ -28,10 +28,10 @@ with confirmed facts. Items map to `isVerified: false` flags and
 
 - [ ] **Exact technology stack per project** → `caseStudy.stack` in `src/data/projects.ts` (currently representative: "Modern web application stack", "Stripe", etc.)
 - [ ] **Skills marked unverified** → `src/data/skills.ts` (Stripe, SQL, multi-tenant architecture, AWS, etc. — confirm each is fair to claim)
-- [ ] **Experience dates and start years** → `src/data/experience.ts` (currently "Present" / "Dates on résumé")
-- [ ] **Purdue Global program name, status, and dates** → `src/data/experience.ts`
+- [ ] **Founder/client-work start years** → `src/data/experience.ts` (Army verified 2020–Present; founder & Murielle dates still needed)
+- [x] **Purdue Global** — verified: B.S. IT (Software Dev Using Web Languages), Magna Cum Laude, April 2026
 - [ ] **Graduate AWS program: institution, exact name, start date** → `src/data/experience.ts`
-- [ ] **Certifications actually earned** → `src/data/experience.ts` (list is empty by design — never list planned certs as earned)
+- [x] **Certifications** — Airborne, Hazmat Certifier, UPL, Security Management (S2) added; Security+ marked in progress
 - [ ] **Approve the biography/about copy** → `src/app/about/page.tsx` and `src/data/site.ts` hero text
 
 ## 4. ~~Decision needed: MyFreedomOps positioning~~ — RESOLVED (July 2026)

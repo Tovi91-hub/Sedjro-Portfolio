@@ -251,8 +251,8 @@ export default function HomePage() {
                 <p>
                   I&apos;ve founded and built platforms in healthcare, military
                   personnel accountability, small-business operations, and
-                  insurance — while continuing formal education in software
-                  development and graduate-level AWS cloud computing.
+                  insurance — with a B.S. in Information Technology earned magna
+                  cum laude and graduate-level AWS cloud study ahead.
                 </p>
               </div>
               <div className="mt-6">
