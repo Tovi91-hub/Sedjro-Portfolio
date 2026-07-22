@@ -8,7 +8,7 @@ with confirmed facts. Items map to `isVerified: false` flags and
 ## 1. Links & identity
 
 - [x] **GitHub profile URL** — wired: https://github.com/Tovi91-hub
-- [ ] **LinkedIn profile URL** → `src/data/site.ts` (`social`, platform `linkedin`) — currently hidden; paste the URL in chat
+- [x] **LinkedIn profile URL** — wired: linkedin.com/in/sedjro-tovihouande-749162b2
 - [ ] **Confirm `contact@sedjrotovihouande.com` mailbox exists** (create it via your email provider / Google Workspace / Cloudflare Email Routing) → `src/data/site.ts` (`email`)
 - [ ] **Public repository links** for any projects you want linked → `repoUrl` per project in `src/data/projects.ts` (only for repos that are public and safe to share)
 

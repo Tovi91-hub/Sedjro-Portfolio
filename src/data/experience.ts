@@ -135,6 +135,14 @@ export const certifications: Certification[] = [
     isVerified: true,
   },
   {
+    id: "a-plus",
+    name: "CompTIA A+",
+    issuer: "CompTIA",
+    status: "earned",
+    year: "2023",
+    isVerified: true,
+  },
+  {
     id: "security-plus",
     name: "CompTIA Security+",
     issuer: "CompTIA · in progress",

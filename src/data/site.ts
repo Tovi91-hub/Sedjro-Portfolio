@@ -38,8 +38,12 @@ export const site: SiteConfig = {
       href: "https://github.com/Tovi91-hub",
       isVerified: true,
     },
-    // TODO(Sedjro): add the real LinkedIn profile URL. Set href and isVerified: true.
-    { platform: "linkedin", label: "LinkedIn", href: null, isVerified: false },
+    {
+      platform: "linkedin",
+      label: "LinkedIn",
+      href: "https://www.linkedin.com/in/sedjro-tovihouande-749162b2",
+      isVerified: true,
+    },
     {
       platform: "email",
       label: "Email",
