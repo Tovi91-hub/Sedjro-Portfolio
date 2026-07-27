@@ -62,19 +62,19 @@
     font-family: "Space Grotesk", "Inter", Arial, sans-serif;
     font-size: 8.8px; font-weight: 600; text-transform: uppercase;
     letter-spacing: 0.07em; color: var(--accent-soft);
-    margin: 21px 0 8px; padding-bottom: 4px;
+    margin: 26px 0 10px; padding-bottom: 5px;
     border-bottom: 1px solid rgba(255,255,255,0.13);
   }
 
-  .contact-row { display: flex; align-items: flex-start; gap: 7px; margin-bottom: 5.5px; font-size: 9.4px; color: var(--side-text); }
+  .contact-row { display: flex; align-items: flex-start; gap: 7px; margin-bottom: 6.5px; font-size: 9.4px; color: var(--side-text); }
   .contact-row svg { width: 10.5px; height: 10.5px; flex: none; margin-top: 2px; stroke: var(--accent-soft); }
   .contact-row strong { color: #ffffff; font-weight: 600; }
 
-  .skill-group { margin-bottom: 8px; }
+  .skill-group { margin-bottom: 10px; }
   .skill-group .label { font-size: 9.4px; font-weight: 600; color: #ffffff; }
   .skill-group .items { font-size: 9.2px; line-height: 1.52; color: var(--side-dim); }
 
-  .cert { display: flex; gap: 7px; align-items: flex-start; margin-bottom: 5px; font-size: 9.4px; }
+  .cert { display: flex; gap: 7px; align-items: flex-start; margin-bottom: 6px; font-size: 9.4px; }
   .cert::before { content: ""; flex: none; width: 4px; height: 4px; border-radius: 1px; background: var(--accent); margin-top: 5px; }
   .cert strong { color: #ffffff; font-weight: 600; }
   .cert .sub { color: var(--side-dim); }
@@ -84,23 +84,23 @@
   .lang .sub { color: var(--side-dim); }
 
   /* ============ MAIN ============ */
-  .main { flex: 1; padding: 0.44in 0.46in 0.34in 0.42in; }
+  .main { flex: 1; padding: 0.46in 0.46in 0.30in 0.42in; display: flex; flex-direction: column; }
 
   .main h2 {
     font-family: "Space Grotesk", "Inter", Arial, sans-serif;
     font-size: 11px; font-weight: 700; text-transform: uppercase;
     letter-spacing: 0.045em; color: var(--navy);
     display: flex; align-items: center; gap: 8px;
-    margin: 17px 0 8px;
+    margin: 26px 0 10px;
   }
   .main h2:first-child { margin-top: 0; }
   .main h2::before { content: ""; width: 16px; height: 3.5px; background: var(--accent); border-radius: 2px; }
   .main h2::after { content: ""; flex: 1; height: 1px; background: var(--line); }
 
-  .summary { font-size: 10.3px; line-height: 1.6; color: var(--ink); }
+  .summary { font-size: 10.5px; line-height: 1.7; color: var(--ink); }
 
-  .highlights { display: grid; grid-template-columns: 1fr 1fr; gap: 6px 16px; }
-  .hl { position: relative; padding-left: 15px; font-size: 9.7px; line-height: 1.46; color: var(--ink); }
+  .highlights { display: grid; grid-template-columns: 1fr 1fr; gap: 10px 20px; }
+  .hl { position: relative; padding-left: 15px; font-size: 9.9px; line-height: 1.5; color: var(--ink); }
   .hl::before {
     content: ""; position: absolute; left: 1px; top: 4.5px;
     width: 7px; height: 3.5px;
@@ -109,7 +109,7 @@
   }
   .hl strong { font-weight: 650; }
 
-  .item { margin-bottom: 10px; }
+  .item { margin-bottom: 15px; }
   .item-head { display: flex; justify-content: space-between; align-items: baseline; gap: 10px; }
   .item-title { font-weight: 700; font-size: 10.8px; color: var(--navy); }
   .item-title .sep { color: var(--accent); font-weight: 600; }
@@ -117,13 +117,19 @@
   .item-meta { font-size: 8.7px; color: var(--muted); white-space: nowrap; }
   .item-meta .live { color: var(--accent); font-weight: 600; }
   ul { list-style: none; margin-top: 2px; }
-  li { padding-left: 11px; position: relative; color: var(--ink); font-size: 9.9px; line-height: 1.52; margin-bottom: 2.5px; }
+  li { padding-left: 11px; position: relative; color: var(--ink); font-size: 10.1px; line-height: 1.62; margin-bottom: 4px; }
   li::before { content: ""; position: absolute; left: 0; top: 7px; width: 4px; height: 4px; border-radius: 50%; background: var(--accent); }
 
-  .edu-item { margin-bottom: 7px; }
+  .edu-item { margin-bottom: 10px; }
   .edu-item .item-title { font-size: 10.3px; }
   .honors { color: var(--accent); font-weight: 700; }
   .edu-note { font-size: 9.6px; color: var(--muted); margin-top: 1px; }
+
+  .footer-note {
+    margin-top: auto; padding-top: 10px; border-top: 1px solid var(--line);
+    font-size: 9.4px; color: var(--muted); text-align: center;
+  }
+  .footer-note strong { color: var(--accent); font-weight: 650; }
 </style>
 </head>
 <body>
@@ -165,12 +171,12 @@
     </div>
 
     <h2>Technical Expertise</h2>
-    <div class="skill-group"><div class="label">Languages</div><div class="items">TypeScript · JavaScript · PHP · SQL · HTML5 · CSS3</div></div>
-    <div class="skill-group"><div class="label">Frontend</div><div class="items">React · Next.js (App Router) · Tailwind CSS · accessible UI (WCAG)</div></div>
-    <div class="skill-group"><div class="label">Backend &amp; Data</div><div class="items">Node.js · REST APIs · MySQL · SQL Server · multi-tenant schemas</div></div>
-    <div class="skill-group"><div class="label">Cloud &amp; DevOps</div><div class="items">Vercel · Git/GitHub · CI-tested deploys (Vitest, PHPUnit) · DNS &amp; domains</div></div>
-    <div class="skill-group"><div class="label">Integrations</div><div class="items">Stripe &amp; Stripe Connect · Resend/PHPMailer email · mobile-money payments</div></div>
-    <div class="skill-group"><div class="label">Security</div><div class="items">RBAC · tenant isolation · audit logging · secure auth · CSP/security headers</div></div>
+    <div class="skill-group"><div class="label">Languages</div><div class="items">TypeScript · JavaScript · PHP · SQL</div></div>
+    <div class="skill-group"><div class="label">Frontend</div><div class="items">React · Next.js · Tailwind CSS · WCAG-accessible UI</div></div>
+    <div class="skill-group"><div class="label">Backend &amp; Data</div><div class="items">Node.js · REST APIs · MySQL · SQL Server</div></div>
+    <div class="skill-group"><div class="label">Cloud &amp; DevOps</div><div class="items">Vercel · Git/GitHub · Vitest · PHPUnit</div></div>
+    <div class="skill-group"><div class="label">Integrations</div><div class="items">Stripe &amp; Stripe Connect · Resend · mobile money</div></div>
+    <div class="skill-group"><div class="label">Security</div><div class="items">RBAC · tenant isolation · audit logging · CSP</div></div>
 
     <h2>Certifications</h2>
     <div class="cert"><span><strong>CompTIA A+</strong> <span class="sub">· 2023</span></span></div>
@@ -190,21 +196,19 @@
     <h2>Executive Summary</h2>
     <p class="summary">
       Full-stack software engineer and active-duty U.S. Army Sergeant with a B.S. in Information Technology
-      (Software Development, <b>magna cum laude</b>) and four production web platforms designed, built, and
-      operated end to end — a multi-tenant healthcare SaaS, an AI-powered financial-readiness platform for the
-      military community, a small-business commerce platform, and a mobile-first insurance product.
-      Security-first engineer: tenant isolation, role-based access control, audit trails. NCO leadership with
+      (<b>magna cum laude</b>) and four production platforms designed, built, and operated end to end.
+      Security-first: multi-tenant isolation, role-based access control, audit trails. NCO leadership with
       accountability for people, $3M in equipment, and mission outcomes.
     </p>
 
     <h2>Career Highlights</h2>
     <div class="highlights">
-      <div class="hl"><strong>Founder &amp; sole developer</strong> of four production web platforms, live with real users and payments</div>
-      <div class="hl"><strong>Architected a multi-tenant healthcare SaaS</strong> with database-level tenant isolation and audit trails</div>
-      <div class="hl"><strong>Built an AI-guided financial-readiness platform</strong> serving the military community</div>
-      <div class="hl"><strong>Integrated Stripe subscriptions &amp; Stripe Connect</strong> marketplace payouts end to end</div>
-      <div class="hl"><strong>Active-duty Army NCO</strong> — leads Soldiers with zero-loss accountability for $3M in assets</div>
-      <div class="hl"><strong>B.S. in IT, magna cum laude</strong> (Software Development), on an electrical-engineering foundation</div>
+      <div class="hl"><strong>Founder &amp; sole developer</strong> of four live production platforms</div>
+      <div class="hl"><strong>Architected a multi-tenant healthcare SaaS</strong> with audit trails</div>
+      <div class="hl"><strong>Built an AI financial-readiness platform</strong> for the military community</div>
+      <div class="hl"><strong>Integrated Stripe &amp; Stripe Connect</strong> payments end to end</div>
+      <div class="hl"><strong>Active-duty Army NCO</strong> — zero-loss accountability for $3M in assets</div>
+      <div class="hl"><strong>B.S. in IT, magna cum laude</strong> — Software Development</div>
     </div>
 
     <h2>Production Software — Founder &amp; Sole Developer</h2>
@@ -215,9 +219,8 @@
         <span class="item-meta">myvitalharmony.com · <span class="live">Live</span></span>
       </div>
       <ul>
-        <li>Designed and deployed a multi-tenant platform where each business operates under its own brand, with database-level tenant isolation, role-based access (owners, providers, staff, clients), and append-only audit trails.</li>
-        <li>Integrated Stripe subscriptions for platform billing and Stripe Connect for per-business payouts; shipped scheduling, secure client messaging, and digital programs on tiered plans ($19–$129/mo).</li>
-        <li>Engineered for regulated workflows: encrypted health-data vault separated from operational data.</li>
+        <li>Each business runs under its own brand — database-level tenant isolation, role-based access, append-only audit trails, and an encrypted health-data vault.</li>
+        <li>Stripe subscriptions and Stripe Connect payouts; scheduling, secure messaging, and digital programs on tiered plans ($19–$129/mo).</li>
       </ul>
     </div>
 
@@ -227,7 +230,7 @@
         <span class="item-meta">myfreedomops.com · <span class="live">Live</span></span>
       </div>
       <ul>
-        <li>Built an AI-guided platform for the military community covering debt elimination, emergency savings, and credit — plus an accountability module giving unit leaders first-formation status roll-ups from Soldiers' self-reports. Independently developed; not affiliated with the U.S. Army or DoD.</li>
+        <li>AI-guided debt, savings, and credit tools for the military community, plus a first-formation accountability module for unit leaders. Independently developed; not affiliated with the U.S. Army or DoD.</li>
       </ul>
     </div>
 
@@ -237,7 +240,7 @@
         <span class="item-meta">muriellehairbraids.com · <span class="live">Live client production</span></span>
       </div>
       <ul>
-        <li>Delivered a client's full digital storefront — service catalog with transparent pricing, online booking with deposits, product shop, admin dashboard, and local SEO — processing real bookings and payments.</li>
+        <li>Full digital storefront — online booking with deposits, product shop, and admin dashboard — processing real bookings and payments.</li>
       </ul>
     </div>
 
@@ -247,7 +250,7 @@
         <span class="item-meta">sedoinsurance.com · <span class="live">Live</span></span>
       </div>
       <ul>
-        <li>Built a bilingual (FR/EN) insurance platform — online quoting across four product lines, mobile-money payments, and phone-first claims — with policies issued through licensed partner insurers.</li>
+        <li>Bilingual (FR/EN) quoting across four product lines with mobile-money payments; policies issued through licensed partner insurers.</li>
       </ul>
     </div>
 
@@ -258,9 +261,9 @@
         <span class="item-meta">Fort Irwin, California · 2020 – Present</span>
       </div>
       <ul>
-        <li>Lead, train, and develop Soldiers; accountable for personnel readiness and $3M in petroleum assets with zero-loss accountability.</li>
-        <li>Unit Prevention Leader and Hazmat certifier — own compliance-grade documentation for hazardous-materials logistics and ammunition transport.</li>
-        <li>Supported S2 (security) office IT operations: access control, SAAR processing, and secure documentation workflows.</li>
+        <li>Lead and train Soldiers; $3M in petroleum assets with zero-loss accountability.</li>
+        <li>Unit Prevention Leader and Hazmat certifier — compliance documentation for hazmat and ammunition transport.</li>
+        <li>Supported S2 (security) office IT: access control, SAAR processing, secure documentation.</li>
       </ul>
     </div>
 
@@ -276,8 +279,10 @@
         <span class="item-title">Vocational Bachelor's — Electrical Engineering &amp; Industrial Data Processing <span class="honors">· Upper Second-Class Honours</span></span>
         <span class="item-meta">IUT Lokossa, Univ. of Abomey-Calavi · 2013</span>
       </div>
-      <div class="edu-note">NACES-evaluated U.S. equivalency (SpanTran): 91.5 semester credits, 3.73/4.00 GPA — coursework incl. OOP, databases, computer architecture, Linux/Windows network administration.</div>
+      <div class="edu-note">NACES-evaluated U.S. equivalency (SpanTran): 3.73/4.00 GPA, 91.5 semester credits.</div>
     </div>
+
+    <div class="footer-note">Case studies, screenshots &amp; technical decisions: <strong>sedjrotovihouande.com</strong></div>
   </main>
 
 </body>
