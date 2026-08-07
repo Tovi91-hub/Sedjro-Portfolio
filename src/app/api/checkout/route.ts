@@ -1,5 +1,6 @@
 import { NextResponse } from "next/server";
 import { sanitizeLine } from "@/lib/contact";
+import { isSameOriginRequest, sanitizeMemo } from "@/lib/request-guard";
 import { site } from "@/data/site";
 
 /**
@@ -12,7 +13,11 @@ import { site } from "@/data/site";
  * - Amount is validated to a sane range; currency is fixed to USD.
  * - Card details are only ever entered on Stripe's hosted page — this site
  *   never touches payment credentials.
- * - Best-effort per-IP rate limiting, matching the other API routes.
+ * - Same-origin check plus best-effort per-IP rate limiting: the endpoint is
+ *   necessarily unauthenticated, so these raise the cost of mass-creating
+ *   Checkout sessions that would carry Sedjro Digital branding.
+ * - The memo is charset-restricted (see sanitizeMemo) so a crafted link
+ *   cannot show a phishing message or URL to a payer under our brand.
  */
 
 const MIN_USD = 1;
@@ -36,6 +41,10 @@ function rateLimited(ip: string): boolean {
 const EMAIL_RE = /^[^\s@]+@[^\s@]+\.[^\s@]{2,}$/;
 
 export async function POST(request: Request) {
+  if (!isSameOriginRequest(request)) {
+    return NextResponse.json({ error: "forbidden_origin" }, { status: 403 });
+  }
+
   let body: unknown;
   try {
     body = await request.json();
@@ -49,7 +58,7 @@ export async function POST(request: Request) {
       ? input.amount
       : Number.parseFloat(typeof input.amount === "string" ? input.amount : "");
   const memo =
-    typeof input.memo === "string" ? sanitizeLine(input.memo).slice(0, 200) : "";
+    typeof input.memo === "string" ? sanitizeMemo(sanitizeLine(input.memo)) : "";
   const email =
     typeof input.email === "string" ? sanitizeLine(input.email) : "";
 

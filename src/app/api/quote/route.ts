@@ -1,5 +1,6 @@
 import { NextResponse } from "next/server";
 import { sanitizeLine } from "@/lib/contact";
+import { isSameOriginRequest } from "@/lib/request-guard";
 import { validateQuote } from "@/lib/quote";
 import { services } from "@/data/services";
 import { site } from "@/data/site";
@@ -26,6 +27,10 @@ function rateLimited(ip: string): boolean {
 }
 
 export async function POST(request: Request) {
+  if (!isSameOriginRequest(request)) {
+    return NextResponse.json({ error: "forbidden_origin" }, { status: 403 });
+  }
+
   let body: unknown;
   try {
     body = await request.json();
