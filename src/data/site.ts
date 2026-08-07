@@ -55,6 +55,7 @@ export const site: SiteConfig = {
   nav: [
     { label: "Home", href: "/" },
     { label: "Projects", href: "/projects" },
+    { label: "Services", href: "/services" },
     { label: "About", href: "/about" },
     { label: "Experience", href: "/experience" },
     { label: "Contact", href: "/contact" },

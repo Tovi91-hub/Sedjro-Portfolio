@@ -126,6 +126,25 @@ export interface Certification {
   isVerified: boolean;
 }
 
+export type ServicePricingModel = "from" | "hourly" | "monthly";
+
+export interface ServiceOffering {
+  slug: string;
+  name: string;
+  /** lucide-react icon name rendered by the services page */
+  icon: "globe" | "wrench" | "bot" | "cloud" | "layers";
+  tagline: string;
+  description: string;
+  deliverables: string[];
+  pricing: {
+    model: ServicePricingModel;
+    /** USD amount for the model unit (starting price, per hour, or per month) */
+    amount: number;
+  };
+  /** Stripe product id in the Sedjro Digital account (reference only, never rendered) */
+  stripeProductId: string;
+}
+
 export interface SiteConfig {
   name: string;
   initials: string;
