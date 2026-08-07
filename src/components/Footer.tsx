@@ -25,7 +25,12 @@ export function Footer() {
             Site
           </p>
           <ul className="mt-3 grid grid-cols-2 gap-x-10 gap-y-2">
-            {[...site.nav, { label: "Résumé", href: "/resume" }].map((item) => (
+            {[
+              ...site.nav,
+              { label: "Résumé", href: "/resume" },
+              { label: "Request a Quote", href: "/hire" },
+              { label: "Make a Payment", href: "/pay" },
+            ].map((item) => (
               <li key={item.href}>
                 <Link
                   href={item.href}

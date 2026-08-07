@@ -21,6 +21,9 @@ git push -u origin main
    - `RESEND_API_KEY` — Production (and Preview if you want the form live there)
    - `CONTACT_TO_EMAIL` — Production
    - `CONTACT_FROM_EMAIL` — Production (after verifying the domain in Resend)
+   - `STRIPE_SECRET_KEY` — Production only (Sedjro Digital Stripe account →
+     Developers → API keys). Powers the `/pay` quick-payment flow; while
+     unset the page shows an "email me for an invoice" fallback.
    - `NEXT_PUBLIC_NOINDEX=true` — **Preview environment only** (keeps
      staging deployments out of search engines; robots.txt and meta robots
      both respect it)
