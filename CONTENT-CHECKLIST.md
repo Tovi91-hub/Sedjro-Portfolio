@@ -9,7 +9,7 @@ with confirmed facts. Items map to `isVerified: false` flags and
 
 - [x] **GitHub profile URL** — wired: https://github.com/Tovi91-hub
 - [x] **LinkedIn profile URL** — wired: linkedin.com/in/sedjro-tovihouande-749162b2
-- [ ] **Confirm `contact@sedjrotovihouande.com` mailbox exists** (create it via your email provider / Google Workspace / Cloudflare Email Routing) → `src/data/site.ts` (`email`)
+- [x] **Confirm `contact@sedjrotovihouande.com` mailbox exists** — hosted at Zoho Mail; end-to-end delivery verified 2026-08-06 (quote form → Resend → Zoho inbox)
 - [ ] **Public repository links** for any projects you want linked → `repoUrl` per project in `src/data/projects.ts` (only for repos that are public and safe to share)
 
 ## 2. Files & media

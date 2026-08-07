@@ -24,11 +24,11 @@ export const site: SiteConfig = {
   domain: "sedjrotovihouande.com",
   locale: "en_US",
 
-  // TODO(Sedjro): confirm this mailbox exists before launch (see CONTENT-CHECKLIST.md).
+  // Mailbox hosted at Zoho Mail; delivery verified end to end on 2026-08-06.
   email: {
     label: "contact@sedjrotovihouande.com",
     href: "mailto:contact@sedjrotovihouande.com",
-    isVerified: false,
+    isVerified: true,
   },
 
   social: [
@@ -48,7 +48,7 @@ export const site: SiteConfig = {
       platform: "email",
       label: "Email",
       href: "mailto:contact@sedjrotovihouande.com",
-      isVerified: false,
+      isVerified: true,
     },
   ],
 
