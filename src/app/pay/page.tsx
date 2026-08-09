@@ -1,20 +1,20 @@
-import { FileText, Mail, ShieldCheck } from "lucide-react";
+import { FileText, Mail, ShieldCheck, Smartphone } from "lucide-react";
 import type { Metadata } from "next";
 import Link from "next/link";
 import { Suspense } from "react";
-import { QuickPayForm } from "@/components/QuickPayForm";
+import { PayMethodTabs } from "@/components/PayMethodTabs";
 import { SectionHeading } from "@/components/SectionHeading";
 import { site } from "@/data/site";
 
 export const metadata: Metadata = {
   title: "Make a Payment",
   description:
-    "Pay a Sedjro Digital invoice or make a project payment securely through Stripe — card, Cash App, Klarna, and more.",
+    "Pay a Sedjro Digital invoice or make a project payment securely — international card via Stripe, or MTN, Moov, and Celtiis mobile money for clients in Benin.",
   alternates: { canonical: "/pay" },
   openGraph: {
     title: "Make a Payment | Sedjro Tovihouande",
     description:
-      "Pay a Sedjro Digital invoice or make a project payment securely through Stripe.",
+      "Pay securely by card, or by MTN, Moov, or Celtiis mobile money if you're in Benin.",
     url: "/pay",
   },
 };
@@ -27,7 +27,7 @@ export default function PayPage() {
           <SectionHeading
             eyebrow="Payments"
             title="Make a payment"
-            description="Payments are handled by Stripe for Sedjro Digital (Tovihouande Group) — the same secure checkout used by millions of businesses."
+            description="Pay Sedjro Digital (Tovihouande Group) by international card, or by mobile money if you're in Benin. Both run on secure hosted checkouts."
             as="h1"
           />
 
@@ -55,7 +55,20 @@ export default function PayPage() {
                 <dd className="mt-1 text-sm leading-relaxed text-muted">
                   Use the quick payment form to pay a deposit, milestone, or
                   balance we&apos;ve agreed on. You&apos;ll get an instant
-                  receipt from Stripe.
+                  receipt.
+                </dd>
+              </div>
+            </div>
+            <div className="flex gap-3.5">
+              <span className="flex size-10 shrink-0 items-center justify-center rounded-lg bg-accent-soft text-accent">
+                <Smartphone className="size-5" aria-hidden="true" />
+              </span>
+              <div>
+                <dt className="text-sm font-semibold">Au Bénin ?</dt>
+                <dd className="mt-1 text-sm leading-relaxed text-muted">
+                  Payez en FCFA avec MTN MoMo, Moov Money ou Celtiis Cash —
+                  choisissez l&apos;onglet «&nbsp;Mobile Money&nbsp;», puis
+                  confirmez sur votre téléphone.
                 </dd>
               </div>
             </div>
@@ -94,7 +107,7 @@ export default function PayPage() {
             Quick payment
           </h2>
           <Suspense fallback={null}>
-            <QuickPayForm />
+            <PayMethodTabs />
           </Suspense>
         </div>
       </div>

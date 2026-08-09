@@ -24,6 +24,10 @@ git push -u origin main
    - `STRIPE_SECRET_KEY` — Production only (Sedjro Digital Stripe account →
      Developers → API keys). Powers the `/pay` quick-payment flow; while
      unset the page shows an "email me for an invoice" fallback.
+   - `FEDAPAY_SECRET_KEY` + `FEDAPAY_ENV` — optional. Enables MTN MoMo /
+     Moov Money / Celtiis Cash on `/pay` for clients in Benin. See
+     "Mobile money (FedaPay)" below. While unset, the Mobile Money tab
+     shows a fallback and no payment can start — safe to deploy without it.
    - `NEXT_PUBLIC_NOINDEX=true` — **Preview environment only** (keeps
      staging deployments out of search engines; robots.txt and meta robots
      both respect it)
@@ -97,3 +101,51 @@ preload) is already set in `next.config.ts`.
   in Next canary. It does not affect this site's runtime (no user CSS is
   stringified). Re-run `npm audit` after the next stable Next.js release
   and update.
+
+## Mobile money (FedaPay) — clients in Benin
+
+`/pay` offers two methods: international card (Stripe, USD) and mobile money
+(FedaPay, XOF/FCFA — MTN MoMo, Moov Money, Celtiis Cash). The FedaPay path is
+**inert until `FEDAPAY_SECRET_KEY` is set**, so the site can ship before the
+account exists.
+
+### 1. Account eligibility (the gating step)
+
+FedaPay KYC requires West African documents — a US LLC/EIN does not qualify:
+
+| Account type | Documents | Limits |
+| --- | --- | --- |
+| Independent Worker | ID + **IFU** (Benin tax number) | 10 transactions/week, 100–300,000 XOF each |
+| Business | **RCCM** + **IFU** + manager ID | none |
+
+An Independent Worker account is the fastest route if you hold an IFU; a
+Business account (RCCM) removes the weekly cap. Note the per-transaction
+ceiling: the code caps amounts at 1,000,000 XOF, but your *account* type may
+cap lower — keep `XOF_MAX` in `src/lib/xof.ts` at or below your real limit.
+
+### 2. Sandbox first
+
+Sandbox keys need no KYC. Set on Preview (or locally in `.env.local`):
+
+```
+FEDAPAY_SECRET_KEY=sk_sandbox_...
+FEDAPAY_ENV=sandbox
+```
+
+Run a payment end to end; FedaPay's sandbox simulates operator confirmation.
+
+### 3. Going live
+
+1. Set `FEDAPAY_SECRET_KEY` to the **live** key on Production only.
+2. Set `FEDAPAY_ENV=live` — the default is `sandbox`, so a missing or
+   misspelled value keeps you off real money rather than on it.
+3. Send one small real payment (e.g. 100 XOF) and confirm it appears in the
+   FedaPay dashboard and that `/pay/mobile-money/thanks` reports it paid.
+
+### Notes
+
+- Payment state is **always re-read from the FedaPay API** on return; the
+  `?status=` in the redirect URL is treated as an untrusted hint.
+- No webhook is required for this flow. Add one only if payments ever need to
+  trigger automated fulfilment — today Sedjro reconciles from the dashboard.
+- XOF has no minor unit: amounts are whole francs, never cents.
