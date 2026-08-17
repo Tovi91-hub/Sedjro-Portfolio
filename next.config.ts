@@ -58,6 +58,24 @@ const nextConfig: NextConfig = {
       },
     ];
   },
+  /**
+   * Payments moved to sedjrodigital.com.
+   *
+   * This site's /pay charged a Stripe account that legally belongs to MyVital
+   * Harmony LLC, so Sedjro Digital's revenue was landing in the wrong entity.
+   * SEDJRO DIGITAL LLC now has its own activated account and its own payment
+   * page, and the secret key behind this site's checkout has been rotated.
+   *
+   * Temporary (307) rather than permanent (308) on purpose: the FedaPay mobile
+   * money surface under /pay is still pending KYC, and a 308 would be cached
+   * hard by browsers if that path ever needs to come back here.
+   */
+  async redirects() {
+    return [
+      { source: "/pay", destination: "https://sedjrodigital.com/pay", permanent: false },
+      { source: "/pay/:path*", destination: "https://sedjrodigital.com/pay", permanent: false },
+    ];
+  },
 };
 
 export default nextConfig;
