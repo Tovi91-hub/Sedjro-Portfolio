@@ -64,7 +64,7 @@ export const site: SiteConfig = {
   resume: {
     pdfPath: "/resume/sedjro-tovihouande-resume.pdf",
     isVerified: true,
-    updatedLabel: "July 2026",
+    updatedLabel: "September 2026",
   },
 
   seo: {
