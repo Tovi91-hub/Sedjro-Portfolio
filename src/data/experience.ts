@@ -8,7 +8,7 @@ import type {
  * Experience timeline, education, and certifications.
  *
  * Honesty policy: no dates, ranks, duty titles, units, or award claims are
- * invented. Entries use period placeholders ("Present", "Dates on résumé")
+ * invented. Entries use period placeholders ("Present", "Dates on resume")
  * until Sedjro confirms them — see CONTENT-CHECKLIST.md. `isVerified: false`
  * marks entries awaiting confirmation; the flag is never rendered.
  */
@@ -37,7 +37,7 @@ export const experience: ExperienceItem[] = [
     role: "Web Developer",
     organization: "Small-business client work (Murielle Hair Braids)",
     // TODO(Sedjro): confirm dates.
-    period: "Dates on résumé",
+    period: "Dates on resume",
     summary:
       "Delivered a production booking and digital-operations platform for a real business — from brand presentation to online booking, product shop, and local SEO.",
     highlights: [

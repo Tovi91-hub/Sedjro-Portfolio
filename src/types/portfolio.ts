@@ -159,7 +159,7 @@ export interface SiteConfig {
   social: SocialLink[];
   nav: NavItem[];
   resume: {
-    /** Path under /public to the PDF, or null while no résumé has been provided */
+    /** Path under /public to the PDF, or null while no resume has been provided */
     pdfPath: string | null;
     isVerified: boolean;
     updatedLabel: string | null;

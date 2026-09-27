@@ -104,7 +104,7 @@ export default function HomePage() {
                 </ButtonLink>
                 <ButtonLink href="/resume" variant="secondary" size="lg">
                   <FileText className="size-4" aria-hidden="true" />
-                  Résumé
+                  Resume
                 </ButtonLink>
                 <SocialLinks className="sm:ml-2" />
               </div>

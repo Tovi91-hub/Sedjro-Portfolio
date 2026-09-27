@@ -4,7 +4,7 @@ import type { SiteConfig } from "@/types/portfolio";
  * Central site configuration.
  *
  * This is the single source of truth for personal information, navigation,
- * social links, résumé location, and default SEO. Nothing in the components
+ * social links, resume location, and default SEO. Nothing in the components
  * hard-codes these values.
  *
  * Items marked `isVerified: false` are placeholders awaiting Sedjro's

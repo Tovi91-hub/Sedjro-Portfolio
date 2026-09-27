@@ -27,7 +27,7 @@ export function Footer() {
           <ul className="mt-3 grid grid-cols-2 gap-x-10 gap-y-2">
             {[
               ...site.nav,
-              { label: "Résumé", href: "/resume" },
+              { label: "Resume", href: "/resume" },
               { label: "Request a Quote", href: "/hire" },
               { label: "Make a Payment", href: "/pay" },
             ].map((item) => (

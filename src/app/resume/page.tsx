@@ -5,20 +5,20 @@ import { SectionHeading } from "@/components/SectionHeading";
 import { site } from "@/data/site";
 
 export const metadata: Metadata = {
-  title: "Résumé",
+  title: "Resume",
   description:
-    "View or download the résumé of Sedjro Tovihouande — software developer, cloud computing professional, and U.S. Army NCO.",
+    "View or download the resume of Sedjro Tovihouande — software developer, cloud computing professional, and U.S. Army NCO.",
   alternates: { canonical: "/resume" },
   openGraph: {
-    title: "Résumé | Sedjro Tovihouande",
+    title: "Resume | Sedjro Tovihouande",
     description:
-      "View or download the résumé of Sedjro Tovihouande — software developer and cloud computing professional.",
+      "View or download the resume of Sedjro Tovihouande — software developer and cloud computing professional.",
     url: "/resume",
   },
 };
 
 /**
- * Résumé page.
+ * Resume page.
  *
  * When site.resume.pdfPath is set (PDF placed under /public), this page
  * offers in-browser viewing and download. Until then it shows an elegant
@@ -28,11 +28,11 @@ export default function ResumePage() {
   const { pdfPath, updatedLabel } = site.resume;
 
   return (
-    <section aria-label="Résumé" className="hero-glow">
+    <section aria-label="Resume" className="hero-glow">
       <div className="container-site max-w-3xl py-16 sm:py-24">
         <SectionHeading
-          eyebrow="Résumé"
-          title={`${site.name} — Résumé`}
+          eyebrow="Resume"
+          title={`${site.name} — Resume`}
           description="Software Developer & Cloud Computing Professional · Technology Founder · U.S. Army NCO"
           as="h1"
         />
@@ -45,7 +45,7 @@ export default function ResumePage() {
               </span>
               <div>
                 <h2 className="font-display text-lg font-semibold">
-                  Current résumé (PDF)
+                  Current resume (PDF)
                 </h2>
                 <p className="mt-1 text-sm text-muted">
                   {updatedLabel
@@ -76,10 +76,10 @@ export default function ResumePage() {
                 <FileText className="size-7" aria-hidden="true" />
               </span>
               <h2 className="font-display text-xl font-semibold">
-                Résumé available on request
+                Resume available on request
               </h2>
               <p className="max-w-md text-sm leading-relaxed text-muted">
-                The downloadable résumé is being finalized. In the meantime, the{" "}
+                The downloadable resume is being finalized. In the meantime, the{" "}
                 <a
                   href="/experience"
                   className="font-medium text-accent underline-offset-2 hover:underline"
@@ -87,12 +87,12 @@ export default function ResumePage() {
                   experience page
                 </a>{" "}
                 covers my background, and I&apos;m happy to send the current
-                résumé directly.
+                resume directly.
               </p>
               <div className="mt-2 flex flex-wrap justify-center gap-3">
                 <ButtonLink href="/contact">
                   <Mail className="size-4" aria-hidden="true" />
-                  Request résumé
+                  Request resume
                 </ButtonLink>
                 <ButtonLink href="/experience" variant="secondary">
                   View experience

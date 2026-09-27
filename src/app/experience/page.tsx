@@ -26,7 +26,7 @@ export default function ExperiencePage() {
           <SectionHeading
             eyebrow="Experience"
             title="Building, leading, and learning — in parallel"
-            description="A professional timeline across product building, client work, military service, and formal education. Full dates and details are on the résumé."
+            description="A professional timeline across product building, client work, military service, and formal education. Full dates and details are on the resume."
             as="h1"
           />
         </div>
@@ -110,7 +110,7 @@ export default function ExperiencePage() {
 
       <CTASection
         title="Want the details?"
-        description="The résumé has the complete picture — roles, dates, education, and technical depth."
+        description="The resume has the complete picture — roles, dates, education, and technical depth."
       />
     </>
   );

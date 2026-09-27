@@ -109,7 +109,7 @@ export function Header() {
             className="hidden h-9 items-center gap-2 rounded-lg bg-accent px-3.5 text-sm font-medium text-white transition-colors hover:bg-accent-strong md:inline-flex dark:font-semibold dark:text-[#0a1120]"
           >
             <FileText className="size-4" aria-hidden="true" />
-            Résumé
+            Resume
           </Link>
           <button
             ref={toggleRef}
@@ -181,7 +181,7 @@ export function Header() {
                       className="mt-3 flex h-12 items-center justify-center gap-2 rounded-xl bg-accent text-base font-medium text-white shadow-md shadow-accent/25 dark:font-semibold dark:text-[#0a1120]"
                     >
                       <FileText className="size-4" aria-hidden="true" />
-                      Résumé
+                      Resume
                     </Link>
                   </nav>
                 </motion.div>
